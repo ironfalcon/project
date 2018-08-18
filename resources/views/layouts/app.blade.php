@@ -14,7 +14,7 @@
     <!--Main style-->
     <link href="{{ asset('files/css/style.css') }}" rel="stylesheet">
     <!--FA icons--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet" href="files/css/icons.css">
+    <link rel="stylesheet" href="{{ asset('files/css/icons.css') }}">
 </head>
 <body>
 <!--Background image-->

@@ -1,6 +1,24 @@
-@extends('layouts.app')
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Группа компаний Технолог</title>
 
-@section('content')
+    <!--Fav-->
+    <link rel="icon" href="{{ asset('files/img/fav.ico') }}" type="image/x-icon">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Creatrix">
+    <!--Bootstrap-->
+    <!-- Styles -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.css" rel="stylesheet">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
+    <!--FA icons--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
+    <link rel="stylesheet" href="files/css/icons.css">
+</head>
+<body>
+
 <div class="container">
     <div class="row">
         <div class="col-md-8 col-md-offset-2">
@@ -74,4 +92,5 @@
         </div>
     </div>
 </div>
-@endsection
+</body>
+</html>
