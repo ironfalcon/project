@@ -9,7 +9,7 @@
                 <div class="news-pre">
                     <h1 class="col-md-12">{{$news->title}}</h1>
                     <div class="col-md-12 news-description">
-                        <a href="#"><img src="{{$news->img}}" width="300px" class="news-img rounded float-left"></a>
+                        <a href="#"><img src="{{ asset('files/news_image/'.$news->img) }}" width="300px" class="news-img rounded float-left"></a>
                         {{$news->text}}
                         </div>
                     <div class="col-md-12">
@@ -22,3 +22,5 @@
     </div>
 
 @endsection('content')
+{{--<img src="/uploads/news_photo/{{ $new->photo }}">--}}
+{{--{{ asset('files/img/fav.ico') }}--}}

@@ -3,8 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use Image;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 
+//use Intervention\Image\Facades\Image;
 class NewsController extends Controller
 {
     //
@@ -42,7 +45,7 @@ class NewsController extends Controller
         if($request->file('photo')) {
             $photo = $request->file('photo');
             $filename = time() . "." . $photo->getClientOriginalExtension();
-            Image::make($photo)->save(public_path('files/news_image' . $filename));
+            Image::make($photo)->save(public_path('files/news_image/' . $filename));
             $photo = $filename;
             $news->img = $photo;
         }
@@ -50,12 +53,47 @@ class NewsController extends Controller
         $news->title = $request->title;
         $news->description = $request->description;
         $news->text = $request->text;
-        $news->create_at = Carbon::now('Europe/Samara');
-        $news->update_at = Carbon::now('Europe/Samara');
+        $news->created_at = Carbon::now('Europe/Samara');
+        $news->updated_at = Carbon::now('Europe/Samara');
         $news->save();
 
-        return redirect()->route('news.index');
-
-
+        return redirect()->route('news.admin');
     }
+
+    public function edit(Request $request, $id)
+    {
+        $news = News::find($id);
+        return view('admin_panel.news.edit', ['news' => $news,]);
+    }
+
+    public function update(Request $request, $id)
+    {
+        //Проверка на отсутстви пустых полей
+        $this->validate($request, [
+            'title' => 'required',
+            'description' => 'required',
+            'text' => 'required',]);
+
+        $news = News::find($id);
+        if($request->file('photo')) {
+            $photo = $request->file('photo');
+            $filename = time() . "." . $photo->getClientOriginalExtension();
+            Image::make($photo)->save(public_path('files/news_image/' . $filename));
+            $photo = $filename;
+            $news->img = $photo;
+        }
+        $news->title = $request->title;
+        $news->description = $request->description;
+        $news->text = $request->text;
+        $news->updated_at = Carbon::now('Europe/Samara');
+        $news->save();
+        return redirect()->route('news.admin');
+    }
+
+    public function delete($id)
+    {
+        News::find($id)->delete();
+        return redirect()->route('news.admin');
+    }
+
 }

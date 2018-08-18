@@ -15,7 +15,7 @@
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet">
     <!--FA icons--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet" href="{{ asset('files/css/icons.css') }}">
+    <link rel="stylesheet" href="files/css/icons.css">
 </head>
 <body>
 <nav class="navbar navbar-inverse">
@@ -24,7 +24,7 @@
             <a class="navbar-brand" href="#">Admin Panel</a>
         </div>
         <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Новости</a></li>
+            <li class="active"><a href="{{ route('news.admin') }}">Новости</a></li>
             <li><a href="#">Продукция</a></li>
             <li><a href="#">Тест</a></li>
             <li class="dropdown">
