@@ -1,0 +1,98 @@
+@font-face {
+  font-family: 'icomoon';
+  src:  url('fonts/icomoon.eot?xtqvnd');
+  src:  url('fonts/icomoon.eot?xtqvnd#iefix') format('embedded-opentype'),
+    url('fonts/icomoon.ttf?xtqvnd') format('truetype'),
+    url('fonts/icomoon.woff?xtqvnd') format('woff'),
+    url('fonts/icomoon.svg?xtqvnd#icomoon') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: 'icomoon' !important;
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-compleks:before {
+  content: "\e90e";
+  color: #1ca4f4;
+}
+.icon-production:before {
+  content: "\e90f";
+  color: #1ca4f4;
+}
+.icon-Rezervuat_construc .path1:before {
+  content: "\e900";
+  color: rgb(28, 164, 244);
+}
+.icon-Rezervuat_construc .path2:before {
+  content: "\e901";
+  margin-left: -1.294921875em;
+  color: rgb(0, 124, 234);
+}
+.icon-project_montage:before {
+  content: "\e902";
+  color: #1ca4f4;
+}
+.icon-pojar .path1:before {
+  content: "\e903";
+  color: rgb(28, 164, 244);
+}
+.icon-pojar .path2:before {
+  content: "\e904";
+  margin-left: -1.2958984375em;
+  color: rgb(0, 124, 234);
+}
+.icon-pojar .path3:before {
+  content: "\e905";
+  margin-left: -1.2958984375em;
+  color: rgb(28, 164, 244);
+}
+.icon-pojar .path4:before {
+  content: "\e906";
+  margin-left: -1.2958984375em;
+  color: rgb(0, 124, 234);
+}
+.icon-rezervuar_ob .path1:before {
+  content: "\e907";
+  color: rgb(28, 164, 244);
+}
+.icon-rezervuar_ob .path2:before {
+  content: "\e908";
+  margin-left: -1.302734375em;
+  color: rgb(0, 124, 234);
+}
+.icon-rezervuar_ob .path3:before {
+  content: "\e909";
+  margin-left: -1.302734375em;
+  color: rgb(28, 164, 244);
+}
+.icon-construct .path1:before {
+  content: "\e90a";
+  color: rgb(0, 124, 234);
+}
+.icon-construct .path2:before {
+  content: "\e90b";
+  margin-left: -1.3505859375em;
+  color: rgb(0, 124, 234);
+}
+.icon-check_box:before {
+  content: "\e90c";
+  color: #007cea;
+}
+.icon-comment:before {
+  content: "\e90d";
+  color: #fff;
+  font-size:45px;
+}

@@ -1,95 +1,560 @@
-<!doctype html>
-<html lang="{{ app()->getLocale() }}">
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+@extends('layouts.app')
 
-        <title>Laravel</title>
-
-        <!-- Fonts -->
-        <link href="https://fonts.googleapis.com/css?family=Raleway:100,600" rel="stylesheet" type="text/css">
-
-        <!-- Styles -->
-        <style>
-            html, body {
-                background-color: #fff;
-                color: #636b6f;
-                font-family: 'Raleway', sans-serif;
-                font-weight: 100;
-                height: 100vh;
-                margin: 0;
-            }
-
-            .full-height {
-                height: 100vh;
-            }
-
-            .flex-center {
-                align-items: center;
-                display: flex;
-                justify-content: center;
-            }
-
-            .position-ref {
-                position: relative;
-            }
-
-            .top-right {
-                position: absolute;
-                right: 10px;
-                top: 18px;
-            }
-
-            .content {
-                text-align: center;
-            }
-
-            .title {
-                font-size: 84px;
-            }
-
-            .links > a {
-                color: #636b6f;
-                padding: 0 25px;
-                font-size: 12px;
-                font-weight: 600;
-                letter-spacing: .1rem;
-                text-decoration: none;
-                text-transform: uppercase;
-            }
-
-            .m-b-md {
-                margin-bottom: 30px;
-            }
-        </style>
-    </head>
-    <body>
-        <div class="flex-center position-ref full-height">
-            @if (Route::has('login'))
-                <div class="top-right links">
-                    @auth
-                        <a href="{{ url('/home') }}">Home</a>
-                    @else
-                        <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Register</a>
-                    @endauth
+@section('content')
+    <!--Header END-->
+    <!--produtions-->
+    <div id="produtions">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12"><div class="col-md-3 title-blue"> <h3> Продукция </h3> </div> </div>
+                <div class="col-md-12 text-center">Вся продукция, производимая и поставляемая нашим объединением, сертифицирована на соответствие требованиям действующих национальных стандартов и технических условий, и имеет полный пакет разрешительных документов.
                 </div>
-            @endif
-
-            <div class="content">
-                <div class="title m-b-md">
-                    Laravel
+                <div class="col-md-3 productions-element">
+                    <a href="http://tehgm.ru/sp_tp_cat_id_31.html">
+              <span class="icons">
+                <span class="icon-rezervuar_ob"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
+              </span>
+                        <p>Резервуарное оборудование</p>
+                    </a>
                 </div>
-
-                <div class="links">
-                    <a href="https://laravel.com/docs">Documentation</a>
-                    <a href="https://laracasts.com">Laracasts</a>
-                    <a href="https://laravel-news.com">News</a>
-                    <a href="https://forge.laravel.com">Forge</a>
-                    <a href="https://github.com/laravel/laravel">GitHub</a>
+                <div class="col-md-3 productions-element">
+                    <a href="http://tehgm.ru/sp_tp_cat_id_56.html">
+              <span class="icons">
+                  <span class="icon-Rezervuat_construc"><span class="path1"></span><span class="path2"></span></span>
+              </span>
+                        <p>Резервуарные металлоконструкции</p>
+                    </a>
+                </div>
+                <div class="col-md-3 productions-element">
+                    <a href="http://tehgm.ru/sp_tp_cat_id_27.html">
+              <span class="icons">
+                <span class="icon-pojar"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+              </span>
+                        <p>Подслойное пожаротушение</p>
+                    </a>
+                </div>
+                <div class="col-md-3 productions-element">
+                    <a href="http://tehgm.ru/cs_item_306.html">
+              <span class="icons">
+                <span class="icon-construct"><span class="path1"></span><span class="path2"></span></span>
+              </span>
+                        <p>Металлоконструкции зданий</p>
+                    </a>
                 </div>
             </div>
         </div>
-    </body>
-</html>
+    </div>
+    <!--produtions END-->
+    <!--about-->
+    <div id="about">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center"><div class="title-white col-md-3"> <h3> О компании </h3> </div> </div>
+                <div class="col-md-6">
+                    Группа компаний "Технолог" оказывает полный спектр услуг по оснащению и строительству нефтяных, газовых и химических предприятий. Наша репутация лидера рынка основана на многолетнем опыте, собственном производстве и активном внедрении современных технологий в работе.
+                </div>
+                <div class="col-md-6">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Собственное производство</p>
+                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Профессиональный инжинеринг</p>
+                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Гарантия качества</p>
+                        </div>
+                        <div class="col-md-6">
+                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Сертифицированная продукция</p>
+                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Сопровождение документации</p>
+                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Зарубежный опыт</p>
+                        </div>
+                    </div>
+                </div>
+                <!--<div class="col-md-12 text-center numbers">
+                  <div class="row">
+                    <div class="col-md-4">
+                      <span id="fun-level-1"> 0 </span>
+                      <p> Подпись</p>
+                    </div>
+                    <div class="col-md-4">
+                      <span id="fun-level-2"> 0 </span>
+                      <p> Подпись</p>
+                    </div>
+                    <div class="col-md-4">
+                      <span id="fun-level-3">  0 </span>
+                      <p> Подпись</p>
+                    </div>
+                  </div>
+                </div>-->
+            </div>
+        </div>
+    </div>
+    <!--about END-->
+    <!--services-->
+
+    <div id="all-services">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 all-services-element">
+                    <a href="http://www.rmk.ru">
+          <span class="icons">
+            <span class="icon-production"></span>
+          </span>
+                        <p>Собственное производство</p>
+                    </a>
+                </div>
+                <div class="col-md-4 all-services-element">
+                    <a href="http://www.tehgm.ru">
+          <span class="icons">
+            <span class="icon-project_montage"></span>
+          </span>
+                        <p>Проектирование и монтаж</p>
+                    </a>
+                </div>
+                <div class="col-md-4 all-services-element">
+                    <a href="http://www.tehgm.ru">
+          <span class="icons">
+           <span class="icon-compleks"></span>
+          </span>
+                        <p>Комплексное проектное решение</p>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--services END-->
+    <!---Gallery->
+
+
+      <!-- Portfolio -->
+    <div id="projects" class="portfolio">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-3 title-white">
+                        <h3> Проекты </h3>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center">
+                    <h2>
+                        <span class="filter label label-default btn btn-box-inverse" data-filter=".Production">Производство</span>
+                        <span class="filter label label-default btn btn-box-inverse" data-filter=".Rezervuars">Резервуары</span>
+                        <!--<<span class="filter label label-default btn btn-box-inverse" data-filter=".Montage">Монтаж</span>
+                        span class="filter label label-default btn btn-box-inverse" data-filter="all">Все</span>-->
+                    </h2>
+                </div>
+                <hr>
+            </div>
+
+            <div class="row">
+                <div class="gallery">
+                    <ul id="Grid" class="gcontainer row">
+                        <!-- Rezervuars -->
+                        <li class="col-md-4 mix Rezervuars" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Rezervuars1" class="mix-cover">
+                                <img src="files/img/images/r1.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Резервуары</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Rezervuars" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Rezervuars2" class="mix-cover">
+                                <img src="files/img/images/r2.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Резервуары</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Rezervuars" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Rezervuars3" class="mix-cover">
+                                <img src="files/img/images/r3.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Резервуары</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Rezervuars" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Rezervuars4" class="mix-cover">
+                                <img src="files/img/images/r4.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Резервуары</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Rezervuars" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Rezervuars5" class="mix-cover">
+                                <img src="files/img/images/r5.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Резервуары</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Rezervuars" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Rezervuars6" class="mix-cover">
+                                <img src="files/img/images/r6.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Резервуары</span></span>
+                            </a>
+                        </li>
+                        <!-- Production -->
+                        <li class="col-md-4 mix Production" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Production1" class="mix-cover">
+                                <img src="files/img/images/p1.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Производство</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Production" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Production2" class="mix-cover">
+                                <img src="files/img/images/p2.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Производство</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Production" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Production3" class="mix-cover">
+                                <img src="files/img/images/p3.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Производство</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Production" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Production4" class="mix-cover">
+                                <img src="files/img/images/p4.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Производство</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Production" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Production5" class="mix-cover">
+                                <img src="files/img/images/p5.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Производство</span></span>
+                            </a>
+                        </li>
+                        <li class="col-md-4 mix Production" data-cat="graphics">
+                            <a data-toggle="modal" data-target="#Production6" class="mix-cover">
+                                <img src="files/img/images/p6.jpg" alt="placeholder">
+                                <span class="overlay"><span class="valign"></span><span class="title">Производство</span></span>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Load Photo in Modal -->
+                    <div class="modal fade" id="Rezervuars1" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Резервуары</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Rezervuars1" src="files/img/images/r1.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Rezervuars2" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Резервуары</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Rezervuars2" src="files/img/images/r2.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Rezervuars3" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Резервуары</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Rezervuars3" src="files/img/images/r3.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Rezervuars4" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Резервуары</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Rezervuars4" src="files/img/images/r4.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Rezervuars5" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Резервуары</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Rezervuars5" src="files/img/images/r5.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Rezervuars6" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Резервуары</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Rezervuars6" src="files/img/images/r6.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Production1" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Производство</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Production1" src="files/img/images/p1.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Production2" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Производство</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Production2" src="files/img/images/p2.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Production3" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Производство</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Production3" src="files/img/images/p3.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Production4" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Производство</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Production4" src="files/img/images/p4.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Production5" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Производство</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Production5" src="files/img/images/p5.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <div class="modal fade" id="Production6" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Производство</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Production6" src="files/img/images/p6.jpg"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                    <!-- /Load Photo in Modal -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- /Portfolio -->
+
+    <!---Gallery END->
+    <!--Clients response
+
+    <div id="clients-comment">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12 text-center"><div class="title-white col-md-3"> <h3> Отзывы </h3> </div> </div>
+      </div>
+    </div>
+  </div>
+          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <div id="clients-comment-item">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-2 comment-icon">
+                        <span class="icon-comment"></span>
+                      </div>
+                      <div class="col-md-3 image-slider">
+                        <img src="img/otzv/1.png">
+                      </div>
+                      <div class="col-md-7  text-left">
+                        <div class="comment-text">
+                      Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной
+                        </div>
+                        <button type="submit" class="btn btn-box-white" style="float:right; margin-bottom: 15px;">Открыть</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div id="clients-comment-item">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-2 comment-icon">
+                        <span class="icon-comment"></span>
+                      </div>
+                      <div class="col-md-3 col-xs-12 image-slider">
+                        <img src="img/otzv/1.png">
+                      </div>
+                      <div class="col-md-7 text-left">
+                                          <div class="comment-text">
+                      Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной
+                        </div>
+                      <button type="submit" class="btn btn-box-white" style="float:right; margin-bottom: 15px;">Открыть</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <div id="clients-comment-item">
+                  <div class="container">
+                    <div class="row">
+                      <div class="col-md-2 comment-icon">
+                        <span class="icon-comment"></span>
+                      </div>
+                      <div class="col-md-3 image-slider">
+                        <img src="img/otzv/1.png">
+                      </div>
+                      <div class="col-md-7  text-left">
+                        <div class="comment-text">
+                      Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной
+                        </div>
+                      <button type="submit" class="btn btn-box-inverse" style="float:right; margin-bottom: 15px;">Открыть</button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="sr-only">Next</span>
+            </a>
+          </div>
+    Clients comment END-->
+    <!--Clients-->
+    <div id="clients">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center"><div class="title-blue col-md-3"> <h3> Наши заказчики</h3> </div> </div>
+            </div>
+        </div>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol>
+        <div class="carousel-inner text-center">
+            <div class="carousel-item active">
+                <div id="clients-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/1.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/2.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/3.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div id="clients-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/4.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/5.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/6.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="carousel-item">
+                <div id="clients-item">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/7.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/8.jpg">
+                                </div>
+                            </div>
+                            <div class="col-md-4">
+                                <div class="clients-image">
+                                    <img width="200px" src="files/img/clients/9.jpg">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Clients END-->
+
+@endsection('content')
