@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Группа компаний Технолог</title>
+    <title>Группа компаний Технолог </title>
 
     <!--Fav-->
-    <link rel="icon" href="files/img/fav.ico" type="image/x-icon">
+    <link rel="icon" href="/files/img/fav.ico" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
-    <meta name="author" content="Creatrix">
+    <meta name="author" content="">
     <!--Bootstrap-->
-    <link href="files/css/bootstrap.css" rel="stylesheet">
+    <link href="/files/css/bootstrap.css" rel="stylesheet">
     <!--Main style-->
-    <link href="files/css/style.css" rel="stylesheet">
+    <link href="/files/css/style.css" rel="stylesheet">
     <!--FA icons--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
-    <link rel="stylesheet" href="files/css/icons.css">
+    <link rel="stylesheet" href="/files/css/icons.css">
 </head>
 <body>
 <!--Background image-->
-<img class="background" src="files/img/r1.jpg">
+<img class="background" src="/files/img/br2.jpg">
 <!--/Background image-->
 <div id="top"></div>
 <!--Wrapper-->
@@ -43,19 +43,19 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#about">О компании</a>
+                    <a class="nav-link page-scroll" href="index.php#about">О компании</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#projects">Проекты</a>
+                    <a class="nav-link page-scroll" href="index.php#projects">Проекты</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#all-services">Услуги</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#produtions">Продукция</a>
+                    <a class="nav-link page-scroll" href="index.php#produtions">Продукция</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('news') }}">Новости</a>
+                    <a class="nav-link page-scroll" href="http://www.tehgm.ru/sp_tp_news.html">Новости</a>
                 </li>
                 <li class="nav-el-color nav-item">
                     <a class="nav-link page-scroll" href="#contacts">Контакты</a>
@@ -74,26 +74,24 @@
 <!--/NAV-->
 <div id="wrapper">
     <!--Header-->
-    <div id="header">
+    <div id="second-deader">
         <div class="container">
             <div class="row">
                 <div class="header-text">
                     <div class="col-md-12">
-                        <div class="text-center main-logo img-fluid">
-                            <img src="files/img/header_logo.png">
+                        <div class="text-center page-title">
+                            Новости
                         </div>
                     </div>
-                    <div class="col-md-5 text-left">
-                        <p class="lead">Собственное производство и
-                            многолетний опыт
-                            работы в сфере комплексного
-                            оснащения и строительства нефтяных,
-                            газовых, и химических предприятий </p>
-                    </div>
-                    <div class="mouse">
-                        <div class="scroll">
-                        </div>
-                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Breadcrumbs">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    Главная <span style="color:rgb(50, 167, 237);">/</span> Новости
                 </div>
             </div>
         </div>
