@@ -4,21 +4,21 @@
     <title>Группа компаний Технолог</title>
 
     <!--Fav-->
-    <link rel="icon" href="files/img/fav.ico" type="image/x-icon">
+    <link rel="icon" href="{{ asset('files/img/fav.ico') }}" type="image/x-icon">
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="Creatrix">
     <!--Bootstrap-->
-    <link href="files/css/bootstrap.css" rel="stylesheet">
+    <link href="{{ asset('files/css/bootstrap.css') }}" rel="stylesheet">
     <!--Main style-->
-    <link href="files/css/style.css" rel="stylesheet">
+    <link href="{{ asset('files/css/style.css') }}" rel="stylesheet">
     <!--FA icons--><link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt" crossorigin="anonymous">
     <link rel="stylesheet" href="files/css/icons.css">
 </head>
 <body>
 <!--Background image-->
-<img class="background" src="files/img/r1.jpg">
+<img class="background" src="{{ asset('files/img/r1.jpg') }}">
 <!--/Background image-->
 <div id="top"></div>
 <!--Wrapper-->
@@ -80,7 +80,7 @@
                 <div class="header-text">
                     <div class="col-md-12">
                         <div class="text-center main-logo img-fluid">
-                            <img src="files/img/header_logo.png">
+                            <img src="{{ asset('files/img/header_logo.png') }}">
                         </div>
                     </div>
                     <div class="col-md-5 text-left">
@@ -178,14 +178,14 @@
 <!-- footer end-->
 
 
-    <script src="files/js/jquery-3.3.1.min.js"></script>
-    <script src="files/js/jquery.spincrement.js"></script>
-    <script src="files/js/bootstrap.js"></script>
-    <script src="files/js/jquery.animateNumber.js"></script>
-    <script src="files/js/jquery.form.js"></script>
-    <script src="files/js/ajaxMail.js"></script>
-    <script src="files/js/jquery.mixitup.js"></script>
-    <script type="text/javascript">
+<script src="{{ asset('files/js/jquery-3.3.1.min.js') }}"></script>
+<script src="{{ asset('files/js/jquery.spincrement.js') }}"></script>
+<script src="{{ asset('files/js/bootstrap.js') }}"></script>
+<script src="{{ asset('files/js/jquery.animateNumber.js') }}"></script>
+<script src="{{ asset('files/js/jquery.form.js') }}"></script>
+<script src="{{ asset('files/js/ajaxMail.js') }}"></script>
+<script src="{{ asset('files/js/jquery.mixitup.js') }}"></script>
+<script type="text/javascript">
 
         $(document).ready(function(){
             $('.page-scroll').click( function(){ // ловим клик по ссылке с классом go_to jquery.mixitup.min.js
