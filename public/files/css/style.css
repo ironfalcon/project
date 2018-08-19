@@ -293,6 +293,7 @@ position: fixed;
 {
  margin-top: 40px;
  margin-bottom: 40px;
+ width: 100%;
 }
 .news-description
 {
@@ -492,10 +493,6 @@ position: fixed;
   background-color: rgb(255, 255, 255);
   color: rgb(50, 167, 237);
 }
-#clients-item .col-md-4
-{
-
-}
 .clients-image
 {
   border:solid 1px rgb(50, 167, 237);
@@ -536,7 +533,6 @@ position: fixed;
   padding: 0.5rem 1.5rem;
 }
  /* Iphone 5 */
-}
 @media only screen 
 and (min-device-width : 320px) 
 and (max-device-width : 568px) 
@@ -757,6 +753,7 @@ and (orientation : portrait)
 {
     color: #f1f1f1;
 }
+
 .footer-contact-us input :: placeholder
 {
     color: #f1f1f1;
@@ -765,10 +762,12 @@ and (orientation : portrait)
 {
     color: #f1f1f1; 
 }
+
 .footer-contact-us textarea:-moz-placeholder 
 {
     color: #f1f1f1;
 }
+
 .footer-contact-us textarea :: placeholder
 {
     color: #f1f1f1;
@@ -998,3 +997,36 @@ span.valign {
         transform: translateY(20px);
     }
 }
+
+/*Admin panel*/
+.btn
+{
+  border-radius: 0rem !important;
+}
+.admin-container
+{
+  color: #000!important;
+}
+.admin-container .btn
+{
+  color:#fff;
+}
+.admin-container .btn-outline-secondary
+{
+color:#000;
+}
+.admin-container .btn-warning
+{
+  color:#fff;
+  background-color: #fb8b00;
+  border-color: #e17900;
+}
+.admin-bar a
+{
+  color:#fff;
+}
+.admin-bar .dropdown-menu
+{
+  background-color: #2f3840;
+}
+/*Admin panel end*/

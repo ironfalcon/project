@@ -73,30 +73,6 @@
 </div>
 <!--/NAV-->
 <div id="wrapper">
-    <!--Header-->
-    <div id="second-deader">
-        <div class="container">
-            <div class="row">
-                <div class="header-text">
-                    <div class="col-md-12">
-                        <div class="text-center page-title">
-                            Новости
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div id="Breadcrumbs">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-12">
-                    Главная <span style="color:rgb(50, 167, 237);">/</span> Новости
-                </div>
-            </div>
-        </div>
-    </div>
-    <!--Header END-->
     @yield('content')
 
 
