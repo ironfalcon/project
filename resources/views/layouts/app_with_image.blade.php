@@ -43,19 +43,19 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.php#about">О компании</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}index.php#about">О компании</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.php#projects">Проекты</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}index.php#projects">Проекты</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#all-services">Услуги</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}#all-services">Услуги</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.php#produtions">Продукция</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}#produtions">Продукция</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="http://www.tehgm.ru/sp_tp_news.html">Новости</a>
+                    <a class="nav-link page-scroll" href="{{ route('news') }}">Новости</a>
                 </li>
                 <li class="nav-el-color nav-item">
                     <a class="nav-link page-scroll" href="#contacts">Контакты</a>

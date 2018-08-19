@@ -15,9 +15,20 @@
 //    return view('welcome');
 //});
 
+//route to admin main page
 Route::get('admin_panel/main', function () {
     return view('admin_panel.main');
-});
+})->name('admin.main');
+
+//route to reservuars-metal-construction index page
+Route::get('productions/reservuars-metal-construction/index', function () {
+    return view('productions.reservuars-metal-construction.index');
+})->name('reservuars_metal_construction.index');
+
+//route to reservuar vertical
+Route::get('productions/reservuars-metal-construction/vertical', function () {
+    return view('productions.reservuars-metal-construction.vertical');
+})->name('reservuar.vertical');
 
 Auth::routes();
 

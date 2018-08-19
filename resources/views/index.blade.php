@@ -18,7 +18,7 @@
                     </a>
                 </div>
                 <div class="col-md-3 productions-element">
-                    <a href="http://tehgm.ru/sp_tp_cat_id_56.html">
+                    <a href="{{ route('reservuars_metal_construction.index') }}">
               <span class="icons">
                   <span class="icon-Rezervuat_construc"><span class="path1"></span><span class="path2"></span></span>
               </span>

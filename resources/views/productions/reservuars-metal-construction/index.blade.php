@@ -37,7 +37,7 @@
 по международным и национальным стандартам. ТУ 5265-020-01394649-2006
           </div>
         <div class="col-xs-6 productions-element"> 
-        <a href="http://tehgm.ru/sp_tp_cat_id_31.html">
+        <a href="{{ route('reservuar.vertical') }}">
               <span class="icons">
                 <span class="icon-rezervuar_ob"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>              
               </span>
@@ -78,17 +78,17 @@
             <div class="row">    
               <div class="col-md-4">
                 <div class="partners-image"> 
-                <img width="200px" src="img/clients/10.jpg">
+                <img width="200px" src="{{ asset('files/img/clients/10.jpg') }}">
                 </div>  
               </div>   
               <div class="col-md-4">
                 <div class="partners-image">  
-                <img width="200px" src="img/clients/11.jpg">
+                <img width="200px" src="{{ asset('files/img/clients/11.jpg') }}">
                 </div>  
               </div>     
               <div class="col-md-4">
                 <div class="partners-image">
-                <img width="200px" src="img/clients/12.jpg">
+                <img width="200px" src="{{ asset('files/img/clients/12.jpg') }}">
                 </div>  
               </div>
             </div>
@@ -116,17 +116,17 @@
             <div class="row">    
               <div class="col-md-4">
                 <div class="docs-image"> 
-                <a  data-toggle="modal" data-target="#docs1" ><img width="200px" src="img/docs/1.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs1" ><img width="200px" src="{{ asset('files/img/docs/1.jpg') }}"></a>
                 </div>  
               </div>   
               <div class="col-md-4">
                 <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs2" ><img width="200px" src="img/docs/2.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs2" ><img width="200px" src="{{ asset('files/img/docs/2.jpg') }}"></a>
                 </div>  
               </div>     
               <div class="col-md-4">
                 <div class="docs-image">
-                <a  data-toggle="modal" data-target="#docs3" ><img width="200px" src="img/docs/3.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs3" ><img width="200px" src="{{ asset('files/img/docs/3.jpg') }}"></a>
                 </div>  
               </div>
             </div>
@@ -139,17 +139,17 @@
             <div class="row">   
               <div class="col-md-4">
                 <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs4" ><img width="200px" src="img/docs/4.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs4" ><img width="200px" src="{{ asset('files/img/docs/4.jpg') }}"></a>
                 </div>  
               </div>             
               <div class="col-md-4">
                 <div class="docs-image">
-                <a  data-toggle="modal" data-target="#docs5" ><img width="200px" src="img/docs/5.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs5" ><img width="200px" src="{{ asset('files/img/docs/5.jpg') }}"></a>
                 </div>  
               </div>   
               <div class="col-md-4">
                 <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs6" ><img width="200px" src="img/docs/6.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs6" ><img width="200px" src="{{ asset('files/img/docs/6.jpg') }}"></a>
                 </div>  
               </div>
             </div>
@@ -168,7 +168,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/1.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/1.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -182,7 +182,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/2.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/2.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -195,7 +195,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/3.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/3.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -208,7 +208,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/4.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/4.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -221,7 +221,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/5.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/5.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -234,7 +234,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/6.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/6.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->

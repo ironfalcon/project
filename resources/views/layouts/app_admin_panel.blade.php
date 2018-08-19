@@ -42,7 +42,7 @@
         </div>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="">Главная</a>
+                    <a class="nav-link page-scroll" href="{{ route('admin.main') }}">Главная</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="#all-services">Контакты</a>

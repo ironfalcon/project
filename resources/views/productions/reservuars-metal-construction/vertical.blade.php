@@ -39,7 +39,7 @@
         </div>
         <div class="video-production col-md-12">
           <video pip="false" data-video-count="1" loop="loop" autoplay="autoplay" data-src="movie.mp4" data-text="TransitPlus" preload="metadata" muted="" class="bgvideo">
-            <source src="movie.mp4" type="video/mp4">
+            <source src="{{ asset('/files/movie.mp4') }}" type="video/mp4">
           </video>
         </div>
       </div>
@@ -90,7 +90,7 @@
   <div style="background-color: #fff;text-align: center; vertical-align: middle;">
     <div class="container">
       <div class="row">
-        <img width="100%" height="100%" src="img/reservuars/rezerv3.png">
+        <img width="100%" height="100%" src="{{ asset('/files/img/reservuars/rezerv3.png') }}">
       </div>
     </div>
   </div>
@@ -107,7 +107,7 @@
   <div style="background-color: #fff;text-align: center; vertical-align: middle;">
     <div class="container">
       <div class="row">
-        <img width="100%" height="100%" src="img/reservuars/rezerv2.png">
+        <img width="100%" height="100%" src="{{ asset('/files/img/reservuars/rezerv2.png') }}">
       </div>
     </div>
   </div>
@@ -162,7 +162,7 @@
         <div style="padding-top:20px">
           <div class="row">
             <div class="col-md-6">
-              <img width="100%" height="100%" src="img/reservuars/rezerv5.gif">
+              <img width="100%" height="100%" src="{{ asset('/files/img/reservuars/rezerv5.gif') }}">
             </div>
             <div class="col-md-6">
               <ol style="text-align: left;">
@@ -209,17 +209,17 @@
             <div class="row">    
               <div class="col-md-4">
                 <div class="docs-image"> 
-                <a  data-toggle="modal" data-target="#docs1" ><img width="200px" src="img/docs/1.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs1" ><img width="200px" src="{{ asset('/files/img/docs/1.jpg') }}"></a>
                 </div>  
               </div>   
               <div class="col-md-4">
                 <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs2" ><img width="200px" src="img/docs/2.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs2" ><img width="200px" src="{{ asset('/files/img/docs/2.jpg') }}"></a>
                 </div>  
               </div>     
               <div class="col-md-4">
                 <div class="docs-image">
-                <a  data-toggle="modal" data-target="#docs3" ><img width="200px" src="img/docs/3.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs3" ><img width="200px" src="{{ asset('/files/img/docs/3.jpg') }}"></a>
                 </div>  
               </div>
             </div>
@@ -232,17 +232,17 @@
             <div class="row">   
               <div class="col-md-4">
                 <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs4" ><img width="200px" src="img/docs/4.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs4" ><img width="200px" src="{{ asset('/files/img/docs/4.jpg') }}"></a>
                 </div>  
               </div>             
               <div class="col-md-4">
                 <div class="docs-image">
-                <a  data-toggle="modal" data-target="#docs5" ><img width="200px" src="img/docs/5.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs5" ><img width="200px" src="{{ asset('/files/img/docs/5.jpg') }}"></a>
                 </div>  
               </div>   
               <div class="col-md-4">
                 <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs6" ><img width="200px" src="img/docs/6.jpg"></a>
+                <a  data-toggle="modal" data-target="#docs6" ><img width="200px" src="{{ asset('/files/img/docs/6.jpg') }}"></a>
                 </div>  
               </div>
             </div>
@@ -261,7 +261,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/1.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('/files/img/docs/1.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -275,7 +275,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/2.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('/files/img/docs/2.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -288,7 +288,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/3.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('/files/img/docs/3.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -301,7 +301,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/4.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('/files/img/docs/4.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -314,7 +314,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/5.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('/files/img/docs/5.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
@@ -327,7 +327,7 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="img/docs/6.jpg"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('/files/img/docs/6.jpg') }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
