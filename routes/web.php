@@ -18,7 +18,8 @@
 //route to admin main page
 Route::get('admin_panel/main', function () {
     return view('admin_panel.main');
-})->name('admin.main');
+})->name('admin.main')->middleware('auth');
+// происходит редирект на страницу логина , лучше сделать на главную
 
 //route to reservuars-metal-construction index page
 Route::get('productions/reservuars-metal-construction/index', function () {
@@ -29,6 +30,17 @@ Route::get('productions/reservuars-metal-construction/index', function () {
 Route::get('productions/reservuars-metal-construction/vertical', function () {
     return view('productions.reservuars-metal-construction.vertical');
 })->name('reservuar.vertical');
+
+//route to reservuar horizontal
+Route::get('productions/reservuars-metal-construction/horizontal', function () {
+    return view('productions.reservuars-metal-construction.horizontal');
+})->name('reservuar.horizontal');
+
+// временный роутер для резерваурного оборудования
+Route::get('productions/reservuars-equipment/index', function () {
+    return view('productions.reservuars-equipment.index');
+})->name('reservuars-equipment.index');
+
 
 Auth::routes();
 

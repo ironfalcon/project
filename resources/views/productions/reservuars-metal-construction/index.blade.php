@@ -45,7 +45,7 @@
         </a>
         </div>
         <div class="col-xs-6 productions-element"> 
-        <a href="http://tehgm.ru/sp_tp_cat_id_56.html">
+        <a href="{{ route('reservuar.horizontal') }}">
               <span class="icons">
                   <span class="icon-Rezervuat_construc"><span class="path1"></span><span class="path2"></span></span>
               </span>

@@ -10,7 +10,7 @@
                 <div class="col-md-12 text-center">Вся продукция, производимая и поставляемая нашим объединением, сертифицирована на соответствие требованиям действующих национальных стандартов и технических условий, и имеет полный пакет разрешительных документов.
                 </div>
                 <div class="col-md-3 productions-element">
-                    <a href="http://tehgm.ru/sp_tp_cat_id_31.html">
+                    <a href="{{ route('reservuars-equipment.index') }}">
               <span class="icons">
                 <span class="icon-rezervuar_ob"><span class="path1"></span><span class="path2"></span><span class="path3"></span></span>
               </span>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\News;
+use Illuminate\Support\Facades\Auth;
 use Image;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -19,6 +20,11 @@ class NewsController extends Controller
 
     public function index_admin()
     {
+        // проверка зарегистрирован ли пользователь, если нет
+        // редиректит на главную сайта
+        if(!Auth()->check()){
+            return redirect()->route('home');
+        }
         $allNews = News::all();
         return view('admin_panel.news.index',['allNews' =>$allNews,]);
     }
@@ -37,6 +43,10 @@ class NewsController extends Controller
 
     public function store(Request $request)
     {
+        if(!Auth()->check()){
+            return redirect()->route('home');
+        }
+
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
@@ -62,12 +72,19 @@ class NewsController extends Controller
 
     public function edit(Request $request, $id)
     {
+        if(!Auth()->check()){
+            return redirect()->route('home');
+        }
+
         $news = News::find($id);
         return view('admin_panel.news.edit', ['news' => $news,]);
     }
 
     public function update(Request $request, $id)
     {
+        if(!Auth()->check()){
+            return redirect()->route('home');
+        }
         //Проверка на отсутстви пустых полей
         $this->validate($request, [
             'title' => 'required',
@@ -92,6 +109,9 @@ class NewsController extends Controller
 
     public function delete($id)
     {
+        if(!Auth()->check()){
+            return redirect()->route('home');
+        }
         News::find($id)->delete();
         return redirect()->route('news.admin');
     }
