@@ -43,10 +43,10 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home') }}index.php#about">О компании</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}#about">О компании</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home') }}index.php#projects">Проекты</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}#projects">Проекты</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home') }}#all-services">Услуги</a>
