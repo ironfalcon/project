@@ -753,22 +753,12 @@ and (orientation : portrait)
 {
     color: #f1f1f1;
 }
-
-.footer-contact-us input :: placeholder
-{
-    color: #f1f1f1;
-}
 .footer-contact-us textarea::-webkit-input-placeholder 
 {
     color: #f1f1f1; 
 }
 
 .footer-contact-us textarea:-moz-placeholder 
-{
-    color: #f1f1f1;
-}
-
-.footer-contact-us textarea :: placeholder
 {
     color: #f1f1f1;
 }

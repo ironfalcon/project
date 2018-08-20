@@ -41,25 +41,16 @@
   </div>
   <!--produtions END-->
   <!--metal-construction types-->
-    <div id="produtions-MC-list">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-3 col-xs-3">
-            <div class="quad"><img width="20px" src="{{ asset('files/img/quad.png') }}"></div>Металлоконструкции зданий и сооружений
-          </div>
+  <div id="produtions-MC-list">
+    <div class="container">
+      <div class="row">
+        @foreach($allReservuarsEquipment as $production)
           <div class="col-md-3 col-xs-3">
             <div class="quad"><img width="20px" src="{{ asset('files/img/quad.png') }}"></div>
-            Уплотняющие затворы мягкого типа
+            <a href="{{ route('reservuars-equipment.show', $production->id) }}">{{$production->title}}</a>
           </div>
-          <div class="col-md-3 col-xs-3">
-            <div class="quad"><img width="20px" src="{{ asset('files/img/quad.png') }}"></div>
-            Решетчатые настилы и ступени
-          </div>
-          <div class="col-md-3 col-xs-3">
-            <div class="quad"><img width="20px" src="{{ asset('files/img/quad.png') }}"></div>
-            Листы стальные просечно-вытяжные
-          </div>
-        </div>
+        @endforeach
+      </div>
     </div>
   </div>
   <!--metal-construction types END-->
@@ -67,30 +58,15 @@
   <div id="produtions-MC-blocks">
     <div class="container-fluid">
       <div class="row">
+        @foreach($allReservuarsEquipment as $production)
         <div class = "col-md-3 block-el">
-          <img class="block-image" src="{{ asset('files/img/metal/1.jpg') }}">
-          <a  class="col-md-12 block-text" href="#">
-              Металлоконструкции зданий и сооружений
+    <!--Проверять если нету превью имейдж то подставлять чертеж (из папки drawing)-->
+          <img class="block-image" src=" {{asset('files/reservuars_equipment_img/prev_img/'.$production->preview_img) }} ">
+          <a  class="col-md-12 block-text" href="{{ route('reservuars-equipment.show', $production->id) }}">
+            {{$production->title}}
           </a>
         </div>
-        <div class = "col-md-3 block-el">
-          <img class="block-image" src="{{ asset('files/img/metal/2.jpg') }}">
-          <a class="col-md-12 block-text" href="#">
-            Уплотняющие затворы мягкого типа
-          </a>
-        </div>
-        <div class = "col-md-3 block-el">
-          <img class="block-image" src="{{ asset('files/img/metal/3.jpg') }}">
-          <a class="col-md-12 block-text" href="#">
-            Решетчатые настилы и ступени
-          </a>
-        </div>
-        <div class = "col-md-3 block-el">
-          <img class="block-image" src="{{ asset('files/img/metal/4.jpg') }}">
-          <a class="col-md-12 block-text" href="#">
-            Листы стальные просечно-вытяжные
-          </a>
-        </div>
+        @endforeach
       </div>
     </div>
   </div>

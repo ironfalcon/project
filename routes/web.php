@@ -37,15 +37,21 @@ Route::get('productions/reservuars-metal-construction/horizontal', function () {
 })->name('reservuar.horizontal');
 
 // временный роутер для резерваурного оборудования
-Route::get('productions/reservuars-equipment/index', function () {
+/*Route::get('productions/reservuars-equipment/index', function () {
     return view('productions.reservuars-equipment.index');
-})->name('reservuars-equipment.index');
+})->name('reservuars-equipment.index');*/
 
 
 Auth::routes();
 
-
+//Главная
 Route::get('/', 'HomeController@index')->name('home');
+
+//Резервуарное оборудование
+Route::get('productions/reservuars-equipment/index', 'ReservuarsEquipmentController@index')->name('reservuars-equipment.index');
+Route::get('productions/reservuars-equipment/{id}', 'ReservuarsEquipmentController@show')->name('reservuars-equipment.show');
+
+//Новости
 Route::get('/news', 'NewsController@index')->name('news');
 Route::get('news/{id}', 'NewsController@show')->name('news.show');
 Route::get('/admin_panel/news/', 'NewsController@index_admin')->name('news.admin');

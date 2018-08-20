@@ -9,7 +9,8 @@
         <div class="header-text">
         <div class="col-md-12">
           <div class="text-center page-title">
-           <!--Заголовок на шапке-->        
+           <!--Заголовок на шапке-->   
+           {{$production->title}}     
   <!--наименование продукции-->
           </div>
         </div>
@@ -21,9 +22,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-        Главная <span style="color:rgb(50, 167, 237);">/</span> Продукция <span style="color:rgb(50, 167, 237);">/</span> 
+        Главная <span style="color:rgb(50, 167, 237);">/</span> Продукция <span style="color:rgb(50, 167, 237);">/</span> Резервуарное оборудование
         <!--тип продукции-->
-        <span style="color:rgb(50, 167, 237);">/</span>  <!--наименование продукции-->
+        <span style="color:rgb(50, 167, 237);">/</span> 
+        {{$production->title}} <!--наименование продукции-->
 
 
         </div>
@@ -36,7 +38,7 @@
     <div class="container">
     	<div class="row">
         <div class="col-md-12 text-left">
-            <!--ОПИСАНИЕ-->
+        {!!$production->text!!}
         </div>
       </div>
     </div>
@@ -54,8 +56,10 @@
   <div style="background-color: #fff;text-align: center; vertical-align: middle;">
     <div class="container">
       <div class="row">
-        <!-- Чертеж изображение -->
-        <img width="100%" height="100%" src="">
+        <!-- Чертеж изображение --> 
+        <div class="col-md-12 text-center">
+           <img height="400px" src="{{asset('files/reservuars_equipment_img/drawing/'.$production->drawing) }}">
+        </div>   
       </div>
     </div>
   </div>
@@ -74,6 +78,7 @@
     <div class="container tables-reservuars">
       <div class="row">
           <!--Таблица по техническим характеристикам-->
+          {!!$production->parameters!!}
       </div>
     </div>
   </div>
