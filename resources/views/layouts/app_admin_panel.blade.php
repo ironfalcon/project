@@ -78,6 +78,14 @@
         });
     </script>
 
+       <script type="text/javascript">
+           $(document).ready(function () {
+               $("#parameters").editor({
+                   uiLibrary: 'bootstrap4'
+               });
+           });
+       </script>
+
 
 </body>
 </html>

@@ -61,9 +61,15 @@ Route::get('productions/reservuars-equipment/{id}', 'ReservuarsEquipmentControll
 Route::get('admin_panel/productions/reservuars-equipment', 'ReservuarsEquipmentController@admin_show')
     ->name('admin.reservuars-equipment.index');
 Route::get('admin_panel/productions/reservuars-equipment/create', 'ReservuarsEquipmentController@create')
-    ->name('production.create');
+    ->name('admin.reservuars-equipment.create');
 Route::post('admin_panel/productions/reservuars-equipment/store', 'ReservuarsEquipmentController@store')
-    ->name('production.store');
+    ->name('admin.reservuars-equipment.store');
+Route::get('admin_panel/productions/reservuars-equipment/edit/{id}', 'ReservuarsEquipmentController@edit')
+    ->name('admin.reservuars-equipment.edit');
+Route::post('admin_panel/productions/reservuars-equipment/update/{id}', 'ReservuarsEquipmentController@update')
+    ->name('admin.reservuars-equipment.update');
+Route::delete('admin_panel/productions/reservuars-equipment/delete/{id}', 'ReservuarsEquipmentController@delete')
+    ->name('admin.reservuars-equipment.delete');
 
 //Новости
 Route::get('/news', 'NewsController@index')->name('news');
@@ -71,6 +77,6 @@ Route::get('news/{id}', 'NewsController@show')->name('news.show');
 Route::get('/admin_panel/news/', 'NewsController@index_admin')->name('news.admin');
 Route::get('/admin_panel/news/create', 'NewsController@create')->name('news.create');
 Route::post('/admin_panel/news/store', 'NewsController@store')->name('news.store');
-Route::get('/admin_panel/news/store/{id}', 'NewsController@edit')->name('news.edit');
+Route::get('/admin_panel/news/edit/{id}', 'NewsController@edit')->name('news.edit');
 Route::post('/admin_panel/news/update/{id}', 'NewsController@update')->name('news.update');
 Route::delete('/admin_panel/news/delete/{id}', 'NewsController@delete')->name('news.delete');

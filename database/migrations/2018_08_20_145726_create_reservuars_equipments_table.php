@@ -17,11 +17,11 @@ class CreateReservuarsEquipmentsTable extends Migration
             $table->increments('id');
             $table->timestamps();
             $table->string('title');
-            $table->string('preview_img');//превью картинка
+            $table->string('preview_img')->nullable();//превью картинка
             $table->text('text');
-            $table->string('drawing');
-            $table->text('parameters');//технические характеристики
-            $table->text('pdf');
+            $table->string('drawing')->nullable();
+            $table->text('parameters')->nullable();//технические характеристики
+            $table->text('pdf')->nullable();
         });
     }
 
