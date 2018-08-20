@@ -42,6 +42,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
+                @auth
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{ route('admin.main') }}">Админка</a>
+                    </li>
+                @endauth
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home') }}#about">О компании</a>
                 </li>

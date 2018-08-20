@@ -48,7 +48,7 @@
                     <a class="nav-link page-scroll" href="#all-services">Контакты</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="index.php#produtions">Продукция</a>
+                    <a class="nav-link page-scroll" href="{{ route('admin.production') }}">Продукция</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('news.admin') }}">Новости</a>

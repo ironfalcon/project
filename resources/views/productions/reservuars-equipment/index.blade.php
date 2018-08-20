@@ -61,7 +61,12 @@
         @foreach($allReservuarsEquipment as $production)
         <div class = "col-md-3 block-el">
     <!--Проверять если нету превью имейдж то подставлять чертеж (из папки drawing)-->
-          <img class="block-image" src=" {{asset('files/reservuars_equipment_img/prev_img/'.$production->preview_img) }} ">
+          @if($production->preview_img)
+            <img class="block-image" src=" {{asset('files/reservuars_equipment_img/prev_img/'.$production->preview_img) }} ">
+          @else
+            <img class="block-image" src=" {{asset('files/reservuars_equipment_img/drawing/'.$production->drawing) }} ">
+          @endif
+
           <a  class="col-md-12 block-text" href="{{ route('reservuars-equipment.show', $production->id) }}">
             {{$production->title}}
           </a>

@@ -19,6 +19,12 @@
 Route::get('admin_panel/main', function () {
     return view('admin_panel.main');
 })->name('admin.main')->middleware('auth');
+
+//route to admin production page
+Route::get('admin_panel/production', function () {
+    return view('admin_panel.productions.index');
+})->name('admin.production')->middleware('auth');
+
 // происходит редирект на страницу логина , лучше сделать на главную
 
 //route to reservuars-metal-construction index page
@@ -50,6 +56,14 @@ Route::get('/', 'HomeController@index')->name('home');
 //Резервуарное оборудование
 Route::get('productions/reservuars-equipment/index', 'ReservuarsEquipmentController@index')->name('reservuars-equipment.index');
 Route::get('productions/reservuars-equipment/{id}', 'ReservuarsEquipmentController@show')->name('reservuars-equipment.show');
+
+//Резервуарное оборудование админка
+Route::get('admin_panel/productions/reservuars-equipment', 'ReservuarsEquipmentController@admin_show')
+    ->name('admin.reservuars-equipment.index');
+Route::get('admin_panel/productions/reservuars-equipment/create', 'ReservuarsEquipmentController@create')
+    ->name('production.create');
+Route::post('admin_panel/productions/reservuars-equipment/store', 'ReservuarsEquipmentController@store')
+    ->name('production.store');
 
 //Новости
 Route::get('/news', 'NewsController@index')->name('news');
