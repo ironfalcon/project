@@ -337,17 +337,36 @@ position: fixed;
   color: #000;
   font-size: 14pt;
 }
-#produtions-MC-list .col-md-3
-{
-  height: 80px;
-}
 #produtions-MC-list
 {
   padding: 25px;
   background-color: rgb(50, 167, 237);
   width: 100%;
   color: #f1f1f1;
-  font-size: 14pt;
+  font-size: 16pt;
+}
+#produtions-MC-list a
+{
+  text-decoration: none;
+  color: #fff;
+}
+#produtions-MC-list a:hover
+{
+  text-decoration: none;
+  color: #f1f1f1c4;
+}
+#produtions-MC-list ul {
+  list-style: none;
+}
+#produtions-MC-list li {
+  display: table;
+  /* display: table-row; */
+}
+#produtions-MC-list li:before {
+  content: url('/files/img/quad.png');
+  padding-right: 5px;
+  /*display: table-cell;*/
+  vertical-align: middle;
 }
 #produtions-MC-blocks
 {

@@ -20,9 +20,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-        Главная <span style="color:rgb(50, 167, 237);">/</span> Продукция <span style="color:rgb(50, 167, 237);">/</span> Резервуарные металлоконструкции <span style="color:rgb(50, 167, 237);">/</span> Резервуары вертикальные стальные цилиндрические
-
-
+        <a href="{{ route('home') }}" style="text-decoration: none; color: white;">Главная</a> <span style="color:rgb(50, 167, 237);">/</span>
+        <a href="{{ route('home') }}#produtions" style="text-decoration: none; color: white;">Продукция</a> 
+        <a href="{{ route('reservuars_metal_construction.index') }}" style="text-decoration: none; color: white;">Резервуарные металлоконструкции </a> 
+        <span style="color:rgb(50, 167, 237);">/</span> Резервуары вертикальные стальные цилиндрические
         </div>
       </div>
     </div>

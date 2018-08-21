@@ -15,13 +15,13 @@
                     <div class="form-group ">
                         <br>
                         <label for="title">Заголовок:</label>
-                        <input type="text" class="form-control" name="title" id="title" value="{{ $news->title }}">
+                        <input required type="text" class="form-control" name="title" id="title" value="{{ $news->title }}">
                         <br>
                         <label for="description">Краткое описание:</label>
-                        <input type="text" class="form-control" name="description" id="description" value="{{ $news->description }}">
+                        <input required type="text" class="form-control" name="description" id="description" value="{{ $news->description }}">
                         <br>
                         <label for="text">Текст новости:</label>
-                        <textarea name="text" id="text"  rows="5" class="form-control input-text">{{ $news->text }}</textarea>
+                        <textarea required name="text" id="text"  rows="5" class="form-control input-text">{{ $news->text }}</textarea>
                         <br>
                         <label for="img">Картинка:</label>
                         <input type="file" class="btn btn-warning" id="img" name="photo">

@@ -21,11 +21,13 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-        Главная <span style="color:rgb(50, 167, 237);">/</span> Продукция <span style="color:rgb(50, 167, 237);">/</span> 
-        <!--тип продукции-->
-        <span style="color:rgb(50, 167, 237);">/</span>  <!--наименование продукции-->
-
-
+        <a href="{{ route('home') }}" style="text-decoration: none; color: white;">Главная</a> <span style="color:rgb(50, 167, 237);">/</span>
+          <a href="{{ route('home') }}#produtions" style="text-decoration: none; color: white;">Продукция</a>
+          <span style="color:rgb(50, 167, 237);">/</span> 
+          <!--тип продукции-->
+          <a href="" style="text-decoration: none; color: white;">Резервуарное оборудование</a>
+          <span style="color:rgb(50, 167, 237);">/</span>   
+          <!--наименование продукции-->
         </div>
       </div>
     </div>

@@ -19,7 +19,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    Главная <span style="color:rgb(50, 167, 237);">/</span> Новости
+                <a href="{{ route('home') }}" style="text-decoration: none; color: white;">Главная</a> <span style="color:rgb(50, 167, 237);">/</span>
+                 Новости
                 </div>
             </div>
         </div>

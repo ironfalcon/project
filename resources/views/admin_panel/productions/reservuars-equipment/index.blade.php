@@ -5,13 +5,20 @@
     <div class="container" style="padding-top:20px;">
 
         <!-- Кнопка добавить новое оборудование-->
-        <a href="{{ route('admin.reservuars-equipment.create') }}"><button class="btn btn-success">Создать</button></a>
+        <!--<a href="{{ route('admin.reservuars-equipment.create') }}"><button class="btn btn-success">Создать</button></a>-->
         <div id="produtions-MC-blocks">
             <div class="container-fluid">
                 <div class="row">
+                    <!-- Кнопка добавить продукцию-->
+                        <div class = "col-md-3 block-el">
+                            <!--Проверять если нету превью имейдж то подставлять чертеж (из папки drawing)-->
+                            <img class="block-image" src=" {{asset('files/img/plus.jpg') }} ">
+                            <a  class="col-md-12 block-text" href="{{ route('admin.reservuars-equipment.create') }}">
+                                <span style="color:#fff;"><b>Добавить продукцию</b></span>
+                            </a>
+                        </div>
+                    <!-- Вывод списка продукции-->
                     @foreach($allReservuarsEquipment as $production)
-                        //поставил что бы кнопки edit delete совсем верстку не сломали
-                        <div class="col-md-12"></div>
                         <div class = "col-md-3 block-el">
                             <!--Проверять если нету превью имейдж то подставлять чертеж (из папки drawing)-->
                             @if($production->preview_img)
@@ -24,18 +31,17 @@
                             </a>
                             <div class="col-md-12 admin-icons-prod text-right">
                                 <!-- Кнопка изменения -->
-                                <a class="btn btn-warning"  href="{{ route('admin.reservuars-equipment.edit', $production->id) }}">
+                                <a alt="Изменить" class="btn btn-warning"  href="{{ route('admin.reservuars-equipment.edit', $production->id) }}">
                                 <i class="fas fa-pen-square"></i>
                                 </a>
                                 <!-- форма удаления -->
                                 {!! Form::open(['method' => 'DELETE', 'route' => ['admin.reservuars-equipment.delete', $production->id] ])!!}
-                                <button style="margin-top:5px;" class="btn btn-danger" onclick="return confirm('Вы уверены?')">
+                                <button alt="Удалить" style="margin-top:5px;" class="btn btn-danger" onclick="return confirm('Вы уверены?')">
                                 <i class="fas fa-trash"></i>
                                 </button>
                                 {!! Form::close() !!}
                             </div>
                         </div>
-
                     @endforeach
                 </div>
             </div>

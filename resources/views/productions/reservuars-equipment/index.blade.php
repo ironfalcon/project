@@ -20,7 +20,10 @@
     <div class="container">
       <div class="row">
         <div class="col-md-12">
-        Главная <span style="color:rgb(50, 167, 237);">/</span> Продукция <span style="color:rgb(50, 167, 237);">/</span> Резервуарное оборудование
+          <a href="{{ route('home') }}" style="text-decoration: none; color: white;">Главная</a> <span style="color:rgb(50, 167, 237);">/</span>
+          <a href="{{ route('home') }}#produtions" style="text-decoration: none; color: white;">Продукция</a>
+          <span style="color:rgb(50, 167, 237);">/</span> 
+          <a href="{{ route('reservuars-equipment.index') }}" style="text-decoration: none; color: white;">Резервуарное оборудование</a>
         </div>
       </div>
     </div>
@@ -43,14 +46,13 @@
   <!--metal-construction types-->
   <div id="produtions-MC-list">
     <div class="container">
-      <div class="row">
+        <ul class="row">
         @foreach($allReservuarsEquipment as $production)
-          <div class="col-md-3 col-xs-3">
-            <div class="quad"><img width="20px" src="{{ asset('files/img/quad.png') }}"></div>
+          <li class="col-md-4 col-xs-4">
             <a href="{{ route('reservuars-equipment.show', $production->id) }}">{{$production->title}}</a>
-          </div>
+          </li>
         @endforeach
-      </div>
+        </ul>
     </div>
   </div>
   <!--metal-construction types END-->

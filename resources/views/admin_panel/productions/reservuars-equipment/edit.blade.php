@@ -14,10 +14,10 @@
                 <div class="form-group ">
                     <br>
                     <label for="title">Заголовок:</label>
-                    <input type="text" class="form-control" name="title" id="title" value="{{ $equipment->title }}">
+                    <input required type="text" class="form-control" name="title" id="title" value="{{ $equipment->title }}">
                     <br>
                     <label for="text">Текст:</label>
-                    <textarea name="text" id="text"  rows="5" class="form-control input-text">{{ $equipment->text }}</textarea>
+                    <textarea required name="text" id="text"  rows="5" class="form-control input-text">{{ $equipment->text }}</textarea>
                     <br>
                     <label for="parameters">Параметры:</label>
                     <textarea name="parameters" id="parameters"  rows="5" class="form-control input-text">{{ $equipment->parameters }}</textarea>
