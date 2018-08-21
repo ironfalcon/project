@@ -392,7 +392,7 @@ position: fixed;
     -o-transition: all .5s ease-in-out;
     -webkit-transition: all .5s ease-in-out;
 }
-.block-el a:hover
+.block-el .block-text:hover
 {
     background-color: rgba(0,0,0,.65);
     padding-top: 30%;
@@ -1005,12 +1005,6 @@ span.valign {
 {
 color:#000;
 }
-.admin-container .btn-warning
-{
-  color:#fff;
-  background-color: #fb8b00;
-  border-color: #e17900;
-}
 .admin-bar a
 {
   color:#fff;
@@ -1018,5 +1012,16 @@ color:#000;
 .admin-bar .dropdown-menu
 {
   background-color: #2f3840;
+}
+
+.admin-icons-prod
+{
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 15px;
+    color: #fff;
+    text-decoration: none;
+    text-align: center;
 }
 /*Admin panel end*/

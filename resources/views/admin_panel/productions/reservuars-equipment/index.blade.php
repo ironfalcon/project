@@ -19,17 +19,22 @@
                             @else
                                 <img class="block-image" src=" {{asset('files/reservuars_equipment_img/drawing/'.$production->drawing) }} ">
                             @endif
-
                             <a  class="col-md-12 block-text" href="{{ route('reservuars-equipment.show', $production->id) }}">
                                 {{$production->title}}
                             </a>
+                            <div class="col-md-12 admin-icons-prod text-right">
+                                <!-- Кнопка изменения -->
+                                <a class="btn btn-warning"  href="{{ route('admin.reservuars-equipment.edit', $production->id) }}">
+                                <i class="fas fa-pen-square"></i>
+                                </a>
+                                <!-- форма удаления -->
+                                {!! Form::open(['method' => 'DELETE', 'route' => ['admin.reservuars-equipment.delete', $production->id] ])!!}
+                                <button style="margin-top:5px;" class="btn btn-danger" onclick="return confirm('Вы уверены?')">
+                                <i class="fas fa-trash"></i>
+                                </button>
+                                {!! Form::close() !!}
+                            </div>
                         </div>
-                        <!-- Кнопка изменения -->
-                        <a class="col-md-12 " href="{{ route('admin.reservuars-equipment.edit', $production->id) }}"> edit</a>
-                        <!-- форма удаления -->
-                        {!! Form::open(['method' => 'DELETE', 'route' => ['admin.reservuars-equipment.delete', $production->id] ])!!}
-                        <button style="margin-left:10px;" class="btn btn-danger float-right col-md-12" onclick="return confirm('Вы уверены?')">Удалить</button>
-                        {!! Form::close() !!}
 
                     @endforeach
                 </div>
