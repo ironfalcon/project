@@ -54,6 +54,10 @@
                 <div class="col-md-12 text-center"><div class="title-white col-md-3"> <h3> О компании </h3> </div> </div>
                 <div class="col-md-6">
                     Группа компаний "Технолог" оказывает полный спектр услуг по оснащению и строительству нефтяных, газовых и химических предприятий. Наша репутация лидера рынка основана на многолетнем опыте, собственном производстве и активном внедрении современных технологий в работе.
+                    <a href="#" data-toggle="modal" data-target="#changeAboutCompany">
+                        edit
+                    </a>
+                    {{ $mainpage->AboutCompany }}
                 </div>
                 <div class="col-md-6">
                     <div class="row">
@@ -558,5 +562,29 @@
         </div>
     </div>
     <!--Clients END-->
+
+    {{--Изменение описания о Компании--}}
+    <div class="modal fade" id="changeAboutCompany" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">О компании</h4>
+                </div>
+                <div class="modal-body">
+                    {!! Form::open(['route' => ['home.update'], 'method' => 'PUT']) !!}
+                    <div class="form-group">
+                        <label for="AboutCompany">О компании:</label>
+                        <br>
+                        <textarea name="AboutCompany" id="AboutCompany" rows="5" class="form-control">{{  $mainpage->AboutCompany }}</textarea>
+                        <br>
+                        <button class="btn btn-success">Изменить</button>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+
+            </div>
+        </div>
+    </div>
 
 @endsection('content')

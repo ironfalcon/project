@@ -53,6 +53,8 @@ Auth::routes();
 //Главная
 Route::get('/', 'HomeController@index')->name('home');
 
+Route::put('/update', 'HomeController@update')->name('home.update');
+
 //Резервуарное оборудование
 Route::get('productions/reservuars-equipment/index', 'ReservuarsEquipmentController@index')->name('reservuars-equipment.index');
 Route::get('productions/reservuars-equipment/{id}', 'ReservuarsEquipmentController@show')->name('reservuars-equipment.show');

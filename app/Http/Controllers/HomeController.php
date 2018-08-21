@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\MainPage;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -23,6 +24,17 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $mainpage = MainPage::find(1);
+        return view('index', ['mainpage' => $mainpage,]);
+    }
+
+    public function update(Request $request)
+    {
+        if($request->AboutCompany){
+           $update = MainPage::find(1);
+           $update->AboutCompany = $request->AboutCompany;
+           $update->save();
+        }
+        return redirect()->route('home');
     }
 }
