@@ -80,8 +80,15 @@
           <!--Таблица по техническим характеристикам-->
           {!!$production->parameters!!}
       </div>
+      @if($production->pdf)
+      <div class="row">
+        <a href="{{ route('equipment.pdf', $production->pdf) }}"><button class="btn btn-success">Посмотреть PDF</button></a>
+      </div>
+      @endif
     </div>
   </div>
+
+
 
 @endsection('content')
 {{--<img src="/uploads/news_photo/{{ $new->photo }}">--}}

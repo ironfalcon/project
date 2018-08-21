@@ -63,17 +63,20 @@ class ReservuarsEquipmentController extends Controller
 
         if($request->file('pdf')) {
             $pdf = $request->file('pdf');
-            $pdf->store('files/reservuars_equipment_img/pdf/');
-            $newEquipment->pdf = $pdf;
+            $filename = time() . "." . $pdf->getClientOriginalExtension();
+            $pdf->move(public_path() . '/files/reservuars_equipment_img/pdf/', $filename);
+//            $pdf->store('files/reservuars_equipment_img/pdf/');
+//            $newEquipment->pdf = $pdf;
 //            $pdf = $request->file('pdf');
 //            $filename = time() . "." . $pdf->getClientOriginalExtension();
 //            $pdf->store(public_path('files/reservuars_equipment_img/pdf/' . $filename));
-//            $newEquipment->pdf =$filename;
+            $newEquipment->pdf = $filename;
         }
 
         $newEquipment->title = $request->title;
         $newEquipment->parameters = $request->parameters;
         $newEquipment->text = $request->text;
+//        $newEquipment->pdf = "123";
         $newEquipment->created_at = Carbon::now('Europe/Samara');
         $newEquipment->updated_at = Carbon::now('Europe/Samara');
         $newEquipment->save();
@@ -143,5 +146,10 @@ class ReservuarsEquipmentController extends Controller
         }
         ReservuarsEquipment::find($id)->delete();
         return redirect()->route('admin.reservuars-equipment.index');
+    }
+
+    public function show_pdf($pdf)
+    {
+        return response()->file(public_path('files/reservuars_equipment_img/pdf/' . $pdf));
     }
 }

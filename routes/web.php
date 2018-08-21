@@ -70,6 +70,8 @@ Route::post('admin_panel/productions/reservuars-equipment/update/{id}', 'Reservu
     ->name('admin.reservuars-equipment.update');
 Route::delete('admin_panel/productions/reservuars-equipment/delete/{id}', 'ReservuarsEquipmentController@delete')
     ->name('admin.reservuars-equipment.delete');
+Route::get('admin_panel/productions/reservuars-equipment/pdf/{pdf}', 'ReservuarsEquipmentController@show_pdf')
+    ->name('equipment.pdf');
 
 //Новости
 Route::get('/news', 'NewsController@index')->name('news');
