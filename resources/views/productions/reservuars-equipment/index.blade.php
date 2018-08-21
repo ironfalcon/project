@@ -23,7 +23,7 @@
           <a href="{{ route('home') }}" style="text-decoration: none; color: white;">Главная</a> <span style="color:rgb(50, 167, 237);">/</span>
           <a href="{{ route('home') }}#produtions" style="text-decoration: none; color: white;">Продукция</a>
           <span style="color:rgb(50, 167, 237);">/</span> 
-          <a href="{{ route('reservuars-equipment.index') }}" style="text-decoration: none; color: white;">Резервуарное оборудование</a>
+         Резервуарное оборудование
         </div>
       </div>
     </div>

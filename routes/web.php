@@ -55,6 +55,46 @@ Route::get('/', 'HomeController@index')->name('home');
 
 Route::put('/update', 'HomeController@update')->name('home.update');
 
+//Пожаротушение
+Route::get('productions/fire-fighting/index', 'FireFightingController@index')->name('fire-fighting.index');
+Route::get('productions/fire-fighting/{id}', 'FireFightingController@show')->name('fire-fighting.show');
+
+//Пожаротушение
+Route::get('admin_panel/productions/fire-fighting', 'FireFightingController@admin_show')
+    ->name('admin.fire-fighting.index');
+Route::get('admin_panel/productions/fire-fighting/create', 'FireFightingController@create')
+    ->name('admin.fire-fighting.create');
+Route::post('admin_panel/productions/fire-fighting/store', 'FireFightingController@store')
+    ->name('admin.fire-fighting.store');
+Route::get('admin_panel/productions/fire-fighting/edit/{id}', 'FireFightingController@edit')
+    ->name('admin.fire-fighting.edit');
+Route::post('admin_panel/productions/fire-fighting/update/{id}', 'FireFightingController@update')
+    ->name('admin.fire-fighting.update');
+Route::delete('admin_panel/productions/fire-fighting/delete/{id}', 'FireFightingController@delete')
+    ->name('admin.fire-fighting.delete');
+Route::get('admin_panel/productions/fire-fighting/pdf/{pdf}', 'FireFightingController@show_pdf')
+    ->name('production.pdf');
+
+//Металоконструкции
+Route::get('productions/metal-construction-buldings/index', 'MetalConstructionController@index')->name('metal-construction-buldings.index');
+Route::get('productions/metal-construction-buldings/{id}', 'MetalConstructionController@show')->name('metal-construction-buldings.show');
+
+//Металоконструкции
+Route::get('admin_panel/productions/metal-construction-buldings', 'MetalConstructionController@admin_show')
+    ->name('admin.metal-construction-buldings.index');
+Route::get('admin_panel/productions/metal-construction-buldings/create', 'MetalConstructionController@create')
+    ->name('admin.metal-construction-buldings.create');
+Route::post('admin_panel/productions/metal-construction-buldings/store', 'MetalConstructionController@store')
+    ->name('admin.metal-construction-buldings.store');
+Route::get('admin_panel/productions/metal-construction-buldings/edit/{id}', 'MetalConstructionController@edit')
+    ->name('admin.metal-construction-buldings.edit');
+Route::post('admin_panel/productions/metal-construction-buldings/update/{id}', 'MetalConstructionController@update')
+    ->name('admin.metal-construction-buldings.update');
+Route::delete('admin_panel/productions/metal-construction-buldings/delete/{id}', 'MetalConstructionController@delete')
+    ->name('admin.metal-construction-buldings.delete');
+Route::get('admin_panel/productions/metal-construction-buldingspdf/{pdf}', 'MetalConstructionController@show_pdf')
+    ->name('production.pdf');
+
 //Резервуарное оборудование
 Route::get('productions/reservuars-equipment/index', 'ReservuarsEquipmentController@index')->name('reservuars-equipment.index');
 Route::get('productions/reservuars-equipment/{id}', 'ReservuarsEquipmentController@show')->name('reservuars-equipment.show');

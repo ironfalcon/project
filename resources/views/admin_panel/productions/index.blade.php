@@ -26,18 +26,18 @@
                         </a>
                     </div>
                     <div class="col-md-3 productions-element">
-                        <a href="http://tehgm.ru/sp_tp_cat_id_27.html">
-              <span class="icons">
-                <span class="icon-pojar"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
-              </span>
+                        <a href="{{ route('admin.fire-fighting.index') }}">
+                            <span class="icons">
+                                <span class="icon-pojar"><span class="path1"></span><span class="path2"></span><span class="path3"></span><span class="path4"></span></span>
+                            </span>
                             <p>Подслойное пожаротушение</p>
                         </a>
                     </div>
                     <div class="col-md-3 productions-element">
-                        <a href="http://tehgm.ru/cs_item_306.html">
-              <span class="icons">
-                <span class="icon-construct"><span class="path1"></span><span class="path2"></span></span>
-              </span>
+                        <a href="{{ route('admin.metal-construction-buldings.index') }}">
+                            <span class="icons">
+                                <span class="icon-construct"><span class="path1"></span><span class="path2"></span></span>
+                            </span>
                             <p>Металлоконструкции зданий</p>
                         </a>
                     </div>
