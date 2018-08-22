@@ -35,6 +35,20 @@ class HomeController extends Controller
            $update->AboutCompany = $request->AboutCompany;
            $update->save();
         }
+        if($request->AboutProduction){
+           $update = MainPage::find(1);
+           $update->AboutProduction = $request->AboutProduction;
+           $update->save();
+        }
+        if($request->MainPhone){
+           $update = MainPage::find(1);
+           $update->MainPhone = $request->MainPhone;
+           $update->SecondPhone = $request->SecondPhone;
+           $update->PhoneThree = $request->PhoneThree;
+           $update->MainAdress = $request->MainAdress;
+           $update->Email = $request->Email;
+           $update->save();
+        }
         return redirect()->route('home');
     }
 }

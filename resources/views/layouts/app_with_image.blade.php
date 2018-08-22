@@ -16,6 +16,8 @@
     <!--FA icons-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('/files/css/icons.css') }}">
+    <!--Summernote-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
 </head>
 <body>
 <!--Background image-->
@@ -159,6 +161,7 @@
 
 
     <script src="{{ asset('files/js/jquery-3.3.1.min.js') }}"></script>
+    <script src="https://unpkg.com/popper.js"></script>
     <script src="{{ asset('files/js/jquery.spincrement.js') }}"></script>
     <script src="{{ asset('files/js/bootstrap.js') }}"></script>
     <script src="{{ asset('files/js/jquery.animateNumber.js') }}"></script>
@@ -229,6 +232,14 @@
         });
     </script>
     <!-- /Mixitup : Grid -->
+<!-- Include the summernote library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+    <script>
+      $('.summernote').summernote({
+        tabsize: 6,
+        height: 100
+      });
+    </script>
 
 </body>
 </html>

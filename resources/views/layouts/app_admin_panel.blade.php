@@ -15,9 +15,10 @@
     <link href="{{ asset('/files/css/style.css') }}" rel="stylesheet">
     <!--FA icons-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+    <!--icons-->
     <link rel="stylesheet" href="{{ asset('/files/css/icons.css') }}">
-
-    <link href="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/css/gijgo.min.css" rel="stylesheet" type="text/css" />
+    <!--Summernote-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
 </head>
 <body>
        <nav class="navbar navbar-expand-md navbar-dark" style="background-color: rgb(44, 66, 74)!important; margin-top:0px;">
@@ -62,30 +63,16 @@
     @yield('content')
 
 
-
 <script src="{{ asset('files/js/jquery-3.3.1.min.js') }}"></script>
 <script src="https://unpkg.com/popper.js"></script>
 <script src="{{ asset('files/js/bootstrap.js') }}"></script>
-<!-- Include the Quill library -->
-    <script src="https://cdn.jsdelivr.net/npm/gijgo@1.9.10/js/gijgo.min.js" type="text/javascript"></script>
-
-<!-- Initialize Quill editor -->
-<script type="text/javascript">
-        $(document).ready(function () {
-            $("#text").editor({
-                uiLibrary: 'bootstrap4'
-            });
-        });
+<!-- Include the summernote library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+    <script>
+      $('.summernote').summernote({
+        tabsize: 6,
+        height: 100
+      });
     </script>
-
-       <script type="text/javascript">
-           $(document).ready(function () {
-               $("#parameters").editor({
-                   uiLibrary: 'bootstrap4'
-               });
-           });
-       </script>
-
-
 </body>
 </html>

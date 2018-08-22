@@ -17,10 +17,10 @@
                     <input required type="text" class="form-control" name="title" id="title" value="{{ old('title')}}">
                     <br>
                     <label for="text">Текст:</label>
-                    <textarea required name="text" id="text"  rows="5" class="form-control input-text">{{old('text')}}</textarea>
+                    <textarea required name="text" id="text"  rows="5" class="summernote form-control input-text">{{old('text')}}</textarea>
                     <br>
                     <label for="parameters">Технические характеристики:</label>
-                    <textarea name="parameters" id="parameters"  rows="5" class="form-control input-text">{{old('parameters')}}</textarea>
+                    <textarea name="parameters" id="parameters"  rows="5" class="summernote form-control input-text">{{old('parameters')}}</textarea>
                     <br>
                     <label for="preview_img">Картинка превью:</label>
                     <input type="file" class="btn btn-warning" id="preview_img" name="preview_img" value="{{ old('preview_img')}}">

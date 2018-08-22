@@ -21,7 +21,7 @@
                     <input required type="text" class="form-control" name="description" id="description" value="{{ old('description')}}">
                     <br>
                     <label for="text">Текст новости:</label>
-                    <textarea required name="text" id="text"  rows="5" class="form-control input-text">{{old('text')}}</textarea>
+                    <textarea required name="text" id="text"  rows="5" class="summernote form-control input-text">{{old('text')}}</textarea>
                     <br>
                     <label for="img">Картинка:</label>
                     <input type="file" class="btn btn-warning" id="img" name="photo" value="{{ old('photo')}}">

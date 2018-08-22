@@ -8,6 +8,6 @@ class MainPage extends Model
 {
     //
     protected $fillable = [
-        'AboutCompany',
+        'AboutCompany', 'AboutProduction', 'MainAdress', 'Email', 'MainPhone', 'SecondPhone', 'PhoneThree',
     ];
 }

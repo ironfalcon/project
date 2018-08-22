@@ -15,7 +15,19 @@ class CreateMainPagesTable extends Migration
     {
         Schema::create('main_pages', function (Blueprint $table) {
             $table->increments('id');
-            $table->text('AboutCompany');
+            //Текст о компании
+            $table->text('AboutCompany')->nullable();
+            //Текст о продукции
+            $table->text('AboutProduction')->nullable();
+            //Адрес
+            $table->text('MainAdress')->nullable();
+            //Эл почта
+            $table->text('Email')->nullable();
+            //Основной номер телефона
+            $table->text('MainPhone')->nullable();
+            //Остальные номера
+            $table->text('SecondPhone')->nullable();
+            $table->text('PhoneThree')->nullable();
             $table->timestamps();
         });
     }

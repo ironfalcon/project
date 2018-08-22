@@ -73,7 +73,7 @@ Route::post('admin_panel/productions/fire-fighting/update/{id}', 'FireFightingCo
 Route::delete('admin_panel/productions/fire-fighting/delete/{id}', 'FireFightingController@delete')
     ->name('admin.fire-fighting.delete');
 Route::get('admin_panel/productions/fire-fighting/pdf/{pdf}', 'FireFightingController@show_pdf')
-    ->name('production.pdf');
+    ->name('fire-fighting.pdf');
 
 //Металоконструкции
 Route::get('productions/metal-construction-buldings/index', 'MetalConstructionController@index')->name('metal-construction-buldings.index');
@@ -93,7 +93,7 @@ Route::post('admin_panel/productions/metal-construction-buldings/update/{id}', '
 Route::delete('admin_panel/productions/metal-construction-buldings/delete/{id}', 'MetalConstructionController@delete')
     ->name('admin.metal-construction-buldings.delete');
 Route::get('admin_panel/productions/metal-construction-buldingspdf/{pdf}', 'MetalConstructionController@show_pdf')
-    ->name('production.pdf');
+    ->name('metal-construction.pdf');
 
 //Резервуарное оборудование
 Route::get('productions/reservuars-equipment/index', 'ReservuarsEquipmentController@index')->name('reservuars-equipment.index');

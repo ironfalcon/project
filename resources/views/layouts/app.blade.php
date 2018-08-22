@@ -16,6 +16,8 @@
     <!--FA icons-->
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
     <link rel="stylesheet" href="{{ asset('files/css/icons.css') }}">
+    <!--Summernote-->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
 </head>
 <body>
 <!--Background image-->
@@ -31,9 +33,9 @@
     <div id="infobar" >
         <div class="container-fluid">
             <i class="fas fa-map-marker-alt"></i>
-            г. Саратов, ул. Советская, д 3/5, корп. 1, эт. 1
+            {{  $mainpage->MainAdress }}
             <div style="float:right;">
-                <i class="fa fa-phone" aria-hidden="true"></i> +7 (8452) 22-72-85
+                <i class="fa fa-phone" aria-hidden="true"></i> {{  $mainpage->MainPhone }}
             </div>
         </div>
     </div>
@@ -43,23 +45,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav ml-auto">
-                <!--Если пользователь авторизован появляется кнопка Админка-->
                 @auth
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('admin.main') }}">Админка</a>
-                </li>
+                    <li class="nav-item">
+                        <a class="nav-link page-scroll" href="{{ route('admin.main') }}">Админка</a>
+                    </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#about">О компании</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}#about">О компании</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#projects">Проекты</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}#projects">Проекты</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#all-services">Услуги</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}#all-services">Услуги</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#produtions">Продукция</a>
+                    <a class="nav-link page-scroll" href="{{ route('home') }}#produtions">Продукция</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('news') }}">Новости</a>
@@ -71,8 +72,8 @@
             <div class="inmenu" >
                 <div class="container-fluid">
                     <p><i class="fas fa-map-marker-alt"></i>
-                        г. Саратов, ул. Советская, д 3/5, корп. 1, эт. 1</p>
-                    <p><i class="fa fa-phone" aria-hidden="true"></i> +7 (8452) 22-72-85 </p>
+                    {{  $mainpage->MainAdress }}</p>
+                    <p><i class="fa fa-phone" aria-hidden="true"></i> {{  $mainpage->MainPhone }} </p>
                 </div>
             </div>
         </div>
@@ -116,12 +117,19 @@
                 <div class="col-md-3">
                     <div class="col-md-6 text-center title-footer"><h4> Контакты </h4></div>
                     <div></div>
+            @auth
+                <div class="col-md-12 control-element text-right">
+                    <a href="#" data-toggle="modal" data-target="#changeContactInfo" class="btn btn-warning">
+                    <i class="fas fa-pen-square"></i>
+                    </a>
+                </div>
+                @endauth
                     <div class="col-md-12">
-                        <p><i class="fas fa-map-marker-alt"></i> г. Саратов, ул. Советская, д 3/5, корп. 1, эт. 1</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> +7 (8452) 22-72-85</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> +7 (8452) 22-72-93</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> +7 (8452) 22-72-96</p>
-                        <p> <i class="fas fa-envelope"></i> zakaz@tehgm.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> {{  $mainpage->MainAdress }}</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{  $mainpage->MainPhone }}</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{  $mainpage->SecondPhone }}</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{  $mainpage->PhoneThree }}</p>
+                        <p> <i class="fas fa-envelope"></i> {{  $mainpage->Email }}</p>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -182,10 +190,52 @@
     </div>
 </div>
 
+@auth
+    {{--Изменение описания о Компании--}}
+    <div class="modal fade" id="changeContactInfo" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">О компании</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-left">
+                    {!! Form::open(['route' => ['home.update'], 'method' => 'PUT']) !!}
+                    <div class="form-group">
+                    <p>
+                       <label for="MainPhone">Основной номер телефона:</label>                        
+                       <input name="MainPhone" id="MainPhone" class="form-control" value="{{  $mainpage->MainPhone }}">
+                    </p>
+                    <p>
+                       <label for="SecondPhone">Второй номер телефона:</label>                        
+                       <input name="SecondPhone" id="SecondPhone" class="form-control" value="{{  $mainpage->SecondPhone }}">
+                    </p>
+                    <p>
+                       <label for="PhoneThree">Третий номер телефона:</label>                        
+                       <input name="PhoneThree" id="PhoneThree" class="form-control" value="{{  $mainpage->PhoneThree }}">
+                    </p>
+                    <p>
+                       <label for="MainAdress">Адрес:</label>                        
+                       <input name="MainAdress" id="MainAdress" class="form-control" value="{{  $mainpage->MainAdress }}">
+                    </p>
+                    <p>
+                       <label for="Email">Электронная почта:</label>                        
+                       <input name="Email" id="Email" class="form-control" value="{{  $mainpage->Email }}">
+                    </p>
+                        <button class="btn btn-success">Изменить</button>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+
+            </div>
+        </div>
+    </div>
+@endauth
 <!-- footer end-->
 
 
 <script src="{{ asset('files/js/jquery-3.3.1.min.js') }}"></script>
+<script src="https://unpkg.com/popper.js"></script>
 <script src="{{ asset('files/js/jquery.spincrement.js') }}"></script>
 <script src="{{ asset('files/js/bootstrap.js') }}"></script>
 <script src="{{ asset('files/js/jquery.animateNumber.js') }}"></script>
@@ -193,7 +243,6 @@
 <script src="{{ asset('files/js/ajaxMail.js') }}"></script>
 <script src="{{ asset('files/js/jquery.mixitup.js') }}"></script>
 <script type="text/javascript">
-
         $(document).ready(function(){
             $('.page-scroll').click( function(){ // ловим клик по ссылке с классом go_to jquery.mixitup.min.js
                 var scroll_el = $(this).attr('href'); // возьмем содержимое атрибута href, должен быть селектором, т.е. например начинаться с # или .
@@ -256,6 +305,14 @@
         });
     </script>
     <!-- /Mixitup : Grid -->
+<!-- Include the summernote library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+    <script>
+      $('.summernote').summernote({
+        tabsize: 6,
+        height: 100
+      });
+    </script>
 
 </body>
 </html>

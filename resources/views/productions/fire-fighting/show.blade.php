@@ -82,7 +82,7 @@
       </div>
       @if($production->pdf)
       <div class="row">
-        <a href="{{ route('equipment.pdf', $production->pdf) }}"><button class="btn btn-success">Посмотреть PDF</button></a>
+        <a href="{{ route('fire-fighting.pdf', $production->pdf) }}"><button class="btn btn-success">Посмотреть PDF</button></a>
       </div>
       @endif
     </div>

@@ -9,6 +9,8 @@ body
 .background
 {
 position: fixed;
+left: 50%;
+transform: translateX(-50%);
 }
 #infobar
 {
@@ -1020,6 +1022,10 @@ span.valign {
 {
   color:#fff;
 }
+.admin-container .note-toolbar .btn
+{
+  color: #000;
+}
 .admin-container .btn-outline-secondary
 {
 color:#000;
@@ -1042,5 +1048,9 @@ color:#000;
     color: #fff;
     text-decoration: none;
     text-align: center;
+}
+.control-element a
+{
+ color:#fff;
 }
 /*Admin panel end*/
