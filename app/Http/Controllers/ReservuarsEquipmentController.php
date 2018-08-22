@@ -43,7 +43,9 @@ class ReservuarsEquipmentController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'text' => 'required',]);
+            'text' => 'required',
+            'drawing' => 'image',
+            'preview_img' => 'image',]);
         $newEquipment = new ReservuarsEquipment();
         if($request->file('preview_img')) {
             $preview_img = $request->file('preview_img');
@@ -102,7 +104,9 @@ class ReservuarsEquipmentController extends Controller
         //Проверка на отсутстви пустых полей
         $this->validate($request, [
             'title' => 'required',
-            'text' => 'required',]);
+            'text' => 'required',
+            'drawing' => 'image',
+            'preview_img' => 'image',]);
 
         $equipment = ReservuarsEquipment::find($id);
         if($request->file('preview_img')) {

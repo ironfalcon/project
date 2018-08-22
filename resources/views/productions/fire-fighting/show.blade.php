@@ -46,6 +46,7 @@
     </div>
   </div>
     <!--БЛОК С ЧЕРТЕЖАМИ-->
+  @if($production->drawing)
   <div style="background-color: rgb(50, 167, 237); color:#fff; font-size: 30pt; text-align: center; vertical-align: middle;">
     <div class="container">
       <div class="row">
@@ -59,11 +60,13 @@
     <div class="container">
       <div class="row">
         <!-- Чертеж изображение -->
+
            <img height="400px" src="{{asset('files/fire_fighting/drawing/'.$production->drawing) }}">
+
       </div>
     </div>
   </div>
-
+  @endif
       <!--БЛОК ТЕХНИЧЕСКИЕ ХАРАКТЕРИСТИКИ-->
   <div style="background-color: rgb(50, 167, 237); color:#fff; font-size: 30pt; text-align: center; vertical-align: middle;">
     <div class="container">

@@ -1,7 +1,6 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\News;
 use Illuminate\Support\Facades\Auth;
 use Image;
@@ -50,7 +49,8 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'text' => 'required',]);
+            'text' => 'required',
+            'img' => 'image',]);
         $news = new News();
         if($request->file('photo')) {
             $photo = $request->file('photo');
@@ -89,7 +89,8 @@ class NewsController extends Controller
         $this->validate($request, [
             'title' => 'required',
             'description' => 'required',
-            'text' => 'required',]);
+            'text' => 'required',
+            'img' => 'image',]);
 
         $news = News::find($id);
         if($request->file('photo')) {

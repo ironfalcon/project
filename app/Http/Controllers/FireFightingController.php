@@ -44,7 +44,9 @@ class FireFightingController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'text' => 'required',]);
+            'text' => 'required',
+            'drawing' => 'image',
+            'preview_img' => 'image',]);
         $newProduction = new FireFighting();
         if($request->file('preview_img')) {
             $preview_img = $request->file('preview_img');
@@ -103,7 +105,9 @@ class FireFightingController extends Controller
         //Проверка на отсутстви пустых полей
         $this->validate($request, [
             'title' => 'required',
-            'text' => 'required',]);
+            'text' => 'required',
+            'drawing' => 'image',
+            'preview_img' => 'image',]);
 
         $production = FireFighting::find($id);
         if($request->file('preview_img')) {

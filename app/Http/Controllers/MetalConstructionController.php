@@ -44,7 +44,9 @@ class MetalConstructionController extends Controller
 
         $this->validate($request, [
             'title' => 'required',
-            'text' => 'required',]);
+            'text' => 'required',
+            'drawing' => 'image',
+            'preview_img' => 'image',]);
         $newProduction = new MetalConstruction();
         if($request->file('preview_img')) {
             $preview_img = $request->file('preview_img');
@@ -103,7 +105,9 @@ class MetalConstructionController extends Controller
         //Проверка на отсутстви пустых полей
         $this->validate($request, [
             'title' => 'required',
-            'text' => 'required',]);
+            'text' => 'required',
+            'drawing' => 'image',
+            'preview_img' => 'image',]);
 
         $production = MetalConstruction::find($id);
         if($request->file('preview_img')) {
