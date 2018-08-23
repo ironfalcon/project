@@ -15,8 +15,8 @@ class AppServiceProvider extends ServiceProvider
    public function boot()
    {
        //
-       $main = MainPage::find(1);
-       View::share('main', $main);
+       $mainpage = MainPage::find(1);
+       View::share('mainpage', $mainpage);
    }
 
 

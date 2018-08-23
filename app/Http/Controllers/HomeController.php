@@ -24,8 +24,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $mainpage = MainPage::find(1);
-        return view('index', ['mainpage' => $mainpage,]);
+        return view('index');
     }
 
     public function update(Request $request)

@@ -1,6 +1,4 @@
 @extends('layouts.app_with_image')
-
-
 @section('content')
 
   <!--Header-->

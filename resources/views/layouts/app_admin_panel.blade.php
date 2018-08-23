@@ -71,7 +71,7 @@
     <script>
       $('.summernote').summernote({
         tabsize: 6,
-        height: 100
+        height: 300
       });
     </script>
 </body>

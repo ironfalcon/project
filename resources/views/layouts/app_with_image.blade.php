@@ -84,6 +84,7 @@
     @yield('content')
 
 
+
     <!--  Footer-->
     <div id="contacts">
         <div class="container-fluid">
@@ -91,12 +92,19 @@
                 <div class="col-md-3">
                     <div class="col-md-6 text-center title-footer"><h4> Контакты </h4></div>
                     <div></div>
+            @auth
+                <div class="col-md-12 control-element text-right">
+                    <a href="#" data-toggle="modal" data-target="#changeContactInfo" class="btn btn-warning">
+                    <i class="fas fa-pen-square"></i>
+                    </a>
+                </div>
+                @endauth
                     <div class="col-md-12">
-                        <p><i class="fas fa-map-marker-alt"></i> г. Саратов, ул. Советская, д 3/5, корп. 1, эт. 1</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> +7 (8452) 22-72-85</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> +7 (8452) 22-72-93</p>
-                        <p><i class="fa fa-phone" aria-hidden="true"></i> +7 (8452) 22-72-96</p>
-                        <p> <i class="fas fa-envelope"></i> zakaz@tehgm.ru</p>
+                        <p><i class="fas fa-map-marker-alt"></i> {{  $mainpage->MainAdress }}</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{  $mainpage->MainPhone }}</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{  $mainpage->SecondPhone }}</p>
+                        <p><i class="fa fa-phone" aria-hidden="true"></i> {{  $mainpage->PhoneThree }}</p>
+                        <p> <i class="fas fa-envelope"></i> {{  $mainpage->Email }}</p>
                     </div>
                 </div>
                 <div class="col-md-9">
@@ -157,6 +165,47 @@
     </div>
 </div>
 
+@auth
+    {{--Изменение описания о Компании--}}
+    <div class="modal fade" id="changeContactInfo" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">О компании</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-left">
+                    {!! Form::open(['route' => ['home.update'], 'method' => 'PUT']) !!}
+                    <div class="form-group">
+                    <p>
+                       <label for="MainPhone">Основной номер телефона:</label>                        
+                       <input name="MainPhone" id="MainPhone" class="form-control" value="{{  $mainpage->MainPhone }}">
+                    </p>
+                    <p>
+                       <label for="SecondPhone">Второй номер телефона:</label>                        
+                       <input name="SecondPhone" id="SecondPhone" class="form-control" value="{{  $mainpage->SecondPhone }}">
+                    </p>
+                    <p>
+                       <label for="PhoneThree">Третий номер телефона:</label>                        
+                       <input name="PhoneThree" id="PhoneThree" class="form-control" value="{{  $mainpage->PhoneThree }}">
+                    </p>
+                    <p>
+                       <label for="MainAdress">Адрес:</label>                        
+                       <input name="MainAdress" id="MainAdress" class="form-control" value="{{  $mainpage->MainAdress }}">
+                    </p>
+                    <p>
+                       <label for="Email">Электронная почта:</label>                        
+                       <input name="Email" id="Email" class="form-control" value="{{  $mainpage->Email }}">
+                    </p>
+                        <button class="btn btn-success">Изменить</button>
+                    </div>
+                    {!! Form::close() !!}
+                </div>
+
+            </div>
+        </div>
+    </div>
+@endauth
 <!-- footer end-->
 
 
@@ -186,58 +235,12 @@
             alert(str);
         }
     </script>
-    <script>
-        function countNum(num, id)
-        {
-            var percent_number_step = $.animateNumber.numberStepFactories.append(' +')
-            $(id).animateNumber(
-                {
-                    number: num,
-                    'font-size': '30px',
-
-                    easing: 'easeInQuad',
-
-                    numberStep: percent_number_step
-                },
-                1500
-            );
-        }
-        $(document).ready(function(){
-            var show = true;
-            var countbox = "#about";
-            $(window).on("scroll load resize", function(){
-                if(!show) return false;                   // Отменяем показ анимации, если она уже была выполнена
-                var w_top = $(window).scrollTop();        // Количество пикселей на которое была прокручена страница
-                var e_top = $(countbox).offset().top;     // Расстояние от блока со счетчиками до верха всего документа
-                var w_height = $(window).height();        // Высота окна браузера
-                var d_height = $(document).height();      // Высота всего документа
-                var e_height = $(countbox).outerHeight(); // Полная высота блока со счетчиками
-                if(w_top + 200 >= e_top || w_height + w_top == d_height || e_height + e_top < w_height){
-                    countNum(20,"#fun-level-1");
-                    countNum(50,"#fun-level-2");
-                    countNum(500,"#fun-level-3");
-                    show = false;
-                }
-            });
-        });
-    </script>
-    <!-- Mixitup : Grid -->
-    <script>
-        $(function(){
-            $('#Grid').mixItUp({
-                load: {
-                    filter:'.Production'
-                }
-            });
-        });
-    </script>
-    <!-- /Mixitup : Grid -->
 <!-- Include the summernote library -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
     <script>
       $('.summernote').summernote({
         tabsize: 6,
-        height: 100
+        height: 300
       });
     </script>
 

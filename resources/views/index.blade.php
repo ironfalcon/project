@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <!--Header END-->
     <!--produtions-->
@@ -588,7 +587,6 @@
                     {!! Form::open(['route' => ['home.update'], 'method' => 'PUT']) !!}
                     <div class="form-group">
                         <label for="AboutCompany">О компании:</label>
-                       <br>
                         <textarea name="AboutCompany" id="AboutCompany" rows="5" class="summernote form-control">{{  $mainpage->AboutCompany }}</textarea>
                         <br>
                         <button class="btn btn-success">Изменить</button>
@@ -608,11 +606,10 @@
                     <h4 class="modal-title">О продукции</h4>
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                 </div>
-                <div class="modal-body">
+                <div class="modal-body text-left">
                     {!! Form::open(['route' => ['home.update'], 'method' => 'PUT']) !!}
                     <div class="form-group">
-                        <label for="AboutProduction">О продукции:</label>
-                        <br>
+                        <label>О продукции:</label>
                         <textarea name="AboutProduction" id="AboutProduction" rows="5" class="summernote form-control">
                         {{  $mainpage->AboutProduction }}
                         </textarea>
