@@ -46,6 +46,8 @@ Route::get('productions/reservuars-metal-construction/horizontal', function () {
 
 
 Auth::routes();
+//Обратная связь
+Route::post('/mail', 'HomeController@send_mail')->name('mail.send');
 //Клиенты
 Route::post('/clients/add', 'ClientsController@store')->name('clients.add');
 Route::delete('/clients/delete/{id}', 'ClientsController@delete')->name('clients.delete');

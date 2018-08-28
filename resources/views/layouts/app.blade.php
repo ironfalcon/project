@@ -158,11 +158,14 @@
                 <div class="col-md-3">
                     <div class="col-md-6 text-center title-footer"><h4> Обратная связь </h4></div>
                     <div class="col-md-12 footer-contact-us">
+                        <form enctype="multipart/form-data" action="{{ route('mail.send') }}" method="POST">
+                            {{ csrf_field() }}
                         <input type="text"  placeholder="Ваше имя" class="cont-data" name="name" id="name">
                         <input type="text" placeholder="Электронная почта" class=" cont-data" name="email" id="email">
                         <input type="text"  placeholder="Телефон" class=" cont-data" name="subject" id="subject">
                         <textarea placeholder="Ваше сообщение..." class=" cont-data" name="message" id="message" rows="4"></textarea>
-                        <button type="submit" class="btn btn-box" style="float:right; margin-bottom: 15px;" onclick='Message("Форма обратной связи временно не работает, вы можете обратится к нам по даннным из блока Контакты")'>Отправить</button>
+                        <button type="submit" class="btn btn-box" style="float:right; margin-bottom: 15px;" onclick='Message("Спасибо за обращение")'>Отправить</button>
+                        </form>
                     </div>
                 </div>
                 <div class="col-md-9">
