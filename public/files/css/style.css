@@ -282,6 +282,20 @@ transform: translateX(-50%);
 {
   color:#676767;
 }
+
+.pagination .page-item:last-child .page-link {
+   border-top-right-radius: 0.25rem; 
+   border-bottom-right-radius: 0.25rem;
+}
+.pagination .page-link {
+  color: #404040;
+}
+.pagination .page-item.active .page-link {
+  z-index: 1;
+  color: #fff;
+  background-color: #526169;
+  border-color: #718793;
+}
 .date-line
 {
     background: #00ACE9;

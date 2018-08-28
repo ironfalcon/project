@@ -89,98 +89,118 @@
     </div>
   </div>
   <!--about END-->
-  <!--partners-->
-<div id="partners">
-    <div class="container">
-      <div class="row">
+ <!--partners-->
+ <div id="partners">
+        <div class="container-fluid">
+            <div class="row">
         <div class="col-md-12 text-center"><div class="title-blue col-md-3"> <h3> Наши партнеры</h3> </div> </div>
-    </div>
-            <div class="row">    
-              <div class="col-md-4">
-                <div class="partners-image"> 
-                <img width="200px" src="{{ asset('files/img/clients/10.jpg') }}">
-                </div>  
-              </div>   
-              <div class="col-md-4">
-                <div class="partners-image">  
-                <img width="200px" src="{{ asset('files/img/clients/11.jpg') }}">
-                </div>  
-              </div>     
-              <div class="col-md-4">
-                <div class="partners-image">
-                <img width="200px" src="{{ asset('files/img/clients/12.jpg') }}">
-                </div>  
-              </div>
+                @auth
+                <div class="col-md-12 control-element text-right">
+                    <a href="{{route('admin.partners.index')}}" class="btn btn-warning">
+                    <i class="fas fa-pen-square"></i>
+                    </a>
+                </div>
+                @endauth
             </div>
-  </div>
-</div>
+        </div>
+    </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        @for($i=0, $j=0; $i<$allPartners->count(); $i+=3, $j++)
+            @if($i==0)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$j}}" class="active"></li>
+            @else
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$j}}"></li>
+            @endif
+        @endfor
+        </ol>
+        <div class="carousel-inner text-center">
+            @for($i = 0; $i <$allPartners->count()  ; $i+=3)
+            @if($i==0)
+            <div class="carousel-item active">
+            @else
+            <div class="carousel-item">
+            @endif
+                <div id="clients-item">
+                    <div class="container">
+                        <div class="row">
+                            @for($j = $i; $j < $i+3 ; $j++)
+                                @if($j>=$allPartners->count())
+                                    @break
+                                @endif
+                                <div class="col-md-4">
+                                  <div class="partners-image"> 
+                                        <img width="200px" src="{{ asset('files/img/partners/'.$allPartners[$j]->img) }}">
+                                  </div>
+                                </div>
+                            @endfor
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endfor
+        </div>
+    </div>
   <!--partners END-->
-
-  <!--partners-->
-<div id="docs">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12 text-center"><div class="title-blue col-md-5"> <h3> Нормативные документы</h3> </div> </div>
-    </div>
-  </div>
-</div>
-  <div id="docsCarousel" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#docsCarousel" data-slide-to="0" class="active"></li>
-      <li data-target="#docsCarousel" data-slide-to="1"></li>
-    </ol>
-    <div class="carousel-inner text-center">
-      <div class="carousel-item active">
-        <div id="docs-item">
-          <div class="container">
-            <div class="row">    
-              <div class="col-md-4">
-                <div class="docs-image"> 
-                <a  data-toggle="modal" data-target="#docs1" ><img width="200px" src="{{ asset('files/img/docs/1.jpg') }}"></a>
-                </div>  
-              </div>   
-              <div class="col-md-4">
-                <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs2" ><img width="200px" src="{{ asset('files/img/docs/2.jpg') }}"></a>
-                </div>  
-              </div>     
-              <div class="col-md-4">
-                <div class="docs-image">
-                <a  data-toggle="modal" data-target="#docs3" ><img width="200px" src="{{ asset('files/img/docs/3.jpg') }}"></a>
-                </div>  
-              </div>
+  <!--Docs-->
+ <div id="docs">
+        <div class="container">
+            <div class="row">
+        <div class="col-md-12 text-center"><div class="title-blue col-md-3"> <h3> Наши партнеры</h3> </div> </div>
+                @auth
+                <div class="col-md-12 control-element text-right">
+                    <a href="{{route('admin.docs.index')}}" class="btn btn-warning">
+                    <i class="fas fa-pen-square"></i>
+                    </a>
+                </div>
+                @endauth
             </div>
-          </div>
         </div>
-      </div>
-      <div class="carousel-item">
-        <div id="docs-item">
-          <div class="container">
-            <div class="row">   
-              <div class="col-md-4">
-                <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs4" ><img width="200px" src="{{ asset('files/img/docs/4.jpg') }}"></a>
-                </div>  
-              </div>             
-              <div class="col-md-4">
-                <div class="docs-image">
-                <a  data-toggle="modal" data-target="#docs5" ><img width="200px" src="{{ asset('files/img/docs/5.jpg') }}"></a>
-                </div>  
-              </div>   
-              <div class="col-md-4">
-                <div class="docs-image">  
-                <a  data-toggle="modal" data-target="#docs6" ><img width="200px" src="{{ asset('files/img/docs/6.jpg') }}"></a>
-                </div>  
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
-  </div>
-
+    <div id="docsCarousel" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+        @for($i=0, $j=0; $i<$allDocs->count(); $i+=3, $j++)
+            @if($i==0)
+            <li data-target="#docsCarousel" data-slide-to="{{$j}}" class="active"></li>
+            @else
+            <li data-target="#docsCarousel" data-slide-to="{{$j}}"></li>
+            @endif
+        @endfor
+        </ol>
+        <div class="carousel-inner text-center">
+            @for($i = 0; $i <$allDocs->count()  ; $i+=3)
+            @if($i==0)
+            <div class="carousel-item active">
+            @else
+            <div class="carousel-item">
+            @endif
+                <div id="docs-item">
+                    <div class="container">
+                        <div class="row">
+                            @for($j = $i; $j < $i+3 ; $j++)
+                                @if($j>=$allDocs->count())
+                                    @break
+                                @endif
+                                <div class="col-md-4">
+                                  <div class="docs-image"> 
+                                    <a href=""  data-toggle="modal" data-target="{{'#docs'.$allDocs[$j]->id}}" >
+                                      <img width="200px" src="{{ asset('files/img/docs/'.$allDocs[$j]->img) }}">
+                                    </a>
+                                  </div>
+                                </div>
+                            @endfor
+                        </div>
+                    </div>
+                </div>
+            </div>
+            @endfor
+        </div>
+    </div>
+  <!--Docs END-->
+  <!--Docs Modal-->
+@foreach($allDocs as $Docs)
       <!-- /Load Photo in Modal -->
-            <div class="modal fade" id="docs1" tabindex="-1" role="dialog"  aria-hidden="true">
+            <div class="modal fade" id="{{'docs'.$Docs->id}}" tabindex="-1" role="dialog"  aria-hidden="true">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
@@ -188,77 +208,13 @@
                   <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
                 </div>
                 <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/1.jpg') }}"/>
+                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/'.$Docs->img) }}"/>
                 </div>
               </div><!-- /.modal-content -->
             </div><!-- /.modal-dialog -->
           </div><!-- /.modal -->  
-      <!-- /Load Photo in Modal -->
-            <div class="modal fade" id="docs2" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title text-center"></h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/2.jpg') }}"/>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->        <!-- /Load Photo in Modal -->
-            <div class="modal fade" id="docs3" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title text-center"></h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/3.jpg') }}"/>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->        <!-- /Load Photo in Modal -->
-            <div class="modal fade" id="docs4" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title text-center"></h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/4.jpg') }}"/>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->        <!-- /Load Photo in Modal -->
-            <div class="modal fade" id="docs5" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title text-center"></h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/5.jpg') }}"/>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->     <!-- /Load Photo in Modal -->
-            <div class="modal fade" id="docs6" tabindex="-1" role="dialog"  aria-hidden="true">
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h4 class="modal-title text-center"></h4>
-                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                </div>
-                <div class="modal-body">
-                 <img class="img-thumbnail" alt="Production6" src="{{ asset('files/img/docs/6.jpg') }}"/>
-                </div>
-              </div><!-- /.modal-content -->
-            </div><!-- /.modal-dialog -->
-          </div><!-- /.modal -->  
-  <!--partners END-->
+@endforeach
+  <!--Docs Modal END-->
+
 
 @endsection('content')

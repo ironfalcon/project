@@ -4,7 +4,9 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\MetalConstruction;
+use App\Partners;
 use Carbon\Carbon;
+use App\Docs;
 use Image;
 use File;
 
@@ -15,7 +17,9 @@ class MetalConstructionController extends Controller
     public function index()
     {
         $allMetalConstruction = MetalConstruction::all();
-        return view('productions.metal-construction-buldings.index',['allMetalConstruction' =>$allMetalConstruction,]);
+        $allPartners = Partners::all();
+        $allDocs = Docs::all();
+        return view('productions.metal-construction-buldings.index',['allMetalConstruction' =>$allMetalConstruction,'allPartners' =>$allPartners,'allDocs' =>$allDocs,]);
     }
 
     public function show($id)

@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\FireFighting;
+use App\Partners;
+use App\Docs;
 use Carbon\Carbon;
 use Image;
 use File;
@@ -15,7 +17,9 @@ class FireFightingController extends Controller
     public function index()
     {
         $allFireFighting = FireFighting::all();
-        return view('productions.fire-fighting.index',['allFireFighting' =>$allFireFighting,]);
+        $allPartners = Partners::all();
+        $allDocs = Docs::all();
+        return view('productions.fire-fighting.index',['allFireFighting' =>$allFireFighting,'allPartners' =>$allPartners,'allDocs' =>$allDocs,]);
     }
 
     public function show($id)

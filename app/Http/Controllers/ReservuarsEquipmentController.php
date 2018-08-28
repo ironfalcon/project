@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use App\ReservuarsEquipment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
+use App\Partners;
+use App\Docs;
 use Image;
 use File;
 //Резервуарное оборудование
@@ -14,7 +16,9 @@ class ReservuarsEquipmentController extends Controller
     public function index()
     {
         $allReservuarsEquipment = ReservuarsEquipment::all();
-        return view('productions.reservuars-equipment.index',['allReservuarsEquipment' =>$allReservuarsEquipment,]);
+        $allPartners = Partners::all();
+        $allDocs = Docs::all();
+        return view('productions.reservuars-equipment.index',['allReservuarsEquipment' =>$allReservuarsEquipment,'allPartners' =>$allPartners,'allDocs' =>$allDocs,]);
     }
 
     public function show($id)
@@ -26,8 +30,6 @@ class ReservuarsEquipmentController extends Controller
     public function admin_show()
     {
         $allReservuarsEquipment = ReservuarsEquipment::all();
-        //Пример позволяет открыть pdf в браузере
-        //return response()->file(public_path('files/reservuars_equipment_img/prev_img/курсовая.pdf'));
         return view('admin_panel.productions.reservuars-equipment.index',['allReservuarsEquipment' =>$allReservuarsEquipment,]);
     }
 
@@ -68,18 +70,12 @@ class ReservuarsEquipmentController extends Controller
             $pdf = $request->file('pdf');
             $filename = time() . "." . $pdf->getClientOriginalExtension();
             $pdf->move(public_path() . '/files/reservuars_equipment_img/pdf/', $filename);
-//            $pdf->store('files/reservuars_equipment_img/pdf/');
-//            $newEquipment->pdf = $pdf;
-//            $pdf = $request->file('pdf');
-//            $filename = time() . "." . $pdf->getClientOriginalExtension();
-//            $pdf->store(public_path('files/reservuars_equipment_img/pdf/' . $filename));
             $newEquipment->pdf = $filename;
         }
 
         $newEquipment->title = $request->title;
         $newEquipment->parameters = $request->parameters;
         $newEquipment->text = $request->text;
-//        $newEquipment->pdf = "123";
         $newEquipment->created_at = Carbon::now('Europe/Samara');
         $newEquipment->updated_at = Carbon::now('Europe/Samara');
         $newEquipment->save();
@@ -130,10 +126,6 @@ class ReservuarsEquipmentController extends Controller
             $pdf = $request->file('pdf');
             $pdf->store('files/reservuars_equipment_img/pdf/');
             $equipment->pdf = $pdf;
-//            $pdf = $request->file('pdf');
-//            $filename = time() . "." . $pdf->getClientOriginalExtension();
-//            $pdf->store(public_path('files/reservuars_equipment_img/pdf/' . $filename));
-//            $newEquipment->pdf =$filename;
         }
 
         $equipment->title = $request->title;

@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use Image;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Pagination;
 
 //use Intervention\Image\Facades\Image;
 class NewsController extends Controller
@@ -13,7 +14,7 @@ class NewsController extends Controller
     //
     public function index()
     {
-        $allNews = News::all();
+        $allNews = News::orderBy('created_at','desc')->paginate(10);
         return view('news.index',['allNews' =>$allNews,]);
     }
 

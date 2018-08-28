@@ -39,7 +39,7 @@
                     <div class="col-md-12">
                         <div class="row">
                             <div class="col-md-8">
-                                <span class="date-line">{{$news->created_at}}</span>
+                                <span class="date-line">{{$news->created_at->format('d.m.Y')}}</span>
                             </div>
                             <div class="col-md-4">
                                 <a class="btn btn-box" style="float:right; margin-bottom: 15px;" href="{{ route('news.show', $news->id) }}">Читать далее</a>
@@ -49,7 +49,7 @@
                 </div>
                 @endforeach
                 <!--News pref END-->
-
+                {{$allNews->links("pagination::bootstrap-4")}}
             </div>
         </div>
     </div>

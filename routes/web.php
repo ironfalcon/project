@@ -31,7 +31,8 @@ Route::get('admin_panel/production', function () {
 Route::get('productions/reservuars-metal-construction/index', function () {
     return view('productions.reservuars-metal-construction.index');
 })->name('reservuars_metal_construction.index');
-
+Route::get('productions/reservuars-metal-construction/index', 'ReservuarsMetalConstructionController@index')
+    ->name('reservuars_metal_construction.index');
 //route to reservuar vertical
 Route::get('productions/reservuars-metal-construction/vertical', function () {
     return view('productions.reservuars-metal-construction.vertical');
@@ -42,10 +43,6 @@ Route::get('productions/reservuars-metal-construction/horizontal', function () {
     return view('productions.reservuars-metal-construction.horizontal');
 })->name('reservuar.horizontal');
 
-// временный роутер для резерваурного оборудования
-/*Route::get('productions/reservuars-equipment/index', function () {
-    return view('productions.reservuars-equipment.index');
-})->name('reservuars-equipment.index');*/
 
 
 Auth::routes();
@@ -63,6 +60,13 @@ Route::post('admin_panel/partners/add', 'PartnersController@store')
 ->name('admin.partners.add');
 Route::delete('admin_panel/partners/delete/{id}', 'PartnersController@delete')
 ->name('admin.partners.delete');
+//Документы
+Route::get('admin_panel/docs/index', 'DocsController@index')
+->name('admin.docs.index');
+Route::post('admin_panel/docs/add', 'DocsController@store')
+->name('admin.docs.add');
+Route::delete('admin_panel/docs/delete/{id}', 'DocsController@delete')
+->name('admin.docs.delete');
 //Пожаротушение
 Route::get('productions/fire-fighting/index', 'FireFightingController@index')->name('fire-fighting.index');
 Route::get('productions/fire-fighting/{id}', 'FireFightingController@show')->name('fire-fighting.show');
