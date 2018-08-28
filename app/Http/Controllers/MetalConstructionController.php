@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\MetalConstruction;
 use Carbon\Carbon;
 use Image;
+use File;
 
 class MetalConstructionController extends Controller
 {
@@ -148,6 +149,20 @@ class MetalConstructionController extends Controller
     {
         if(!Auth()->check()){
             return redirect()->route('home');
+        }
+        if(File::exists(public_path('files/metal_construction/drawing/'.MetalConstruction::find($id)->drawing))) 
+        {
+            File::delete(public_path('files/metal_construction/drawing/'.MetalConstruction::find($id)->drawing));
+        }
+        
+        if(File::exists(public_path('files/metal_construction/prev_img/'.MetalConstruction::find($id)->preview_img))) 
+        {
+            File::delete(public_path('files/metal_construction/prev_img/'.MetalConstruction::find($id)->preview_img));
+        }
+        
+        if(File::exists(public_path('files/metal_construction/pdf/'.MetalConstruction::find($id)->pdf))) 
+        {
+            File::delete(public_path('files/metal_construction/pdf/'.MetalConstruction::find($id)->pdf));
         }
         MetalConstruction::find($id)->delete();
         return redirect()->route('admin.metal-construction-buldings.index');

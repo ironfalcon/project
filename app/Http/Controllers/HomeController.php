@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use App\MainPage;
+use App\Clients;
 use Illuminate\Http\Request;
+use Image;
 
 class HomeController extends Controller
 {
@@ -24,7 +26,8 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $allClients = Clients::all();
+        return view('index',['allClients' =>$allClients,]);
     }
 
     public function update(Request $request)

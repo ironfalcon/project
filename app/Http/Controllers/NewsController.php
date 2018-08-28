@@ -52,6 +52,7 @@ class NewsController extends Controller
             'text' => 'required',
             'img' => 'image',]);
         $news = new News();
+        
         if($request->file('photo')) {
             $photo = $request->file('photo');
             $filename = time() . "." . $photo->getClientOriginalExtension();

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\FireFighting;
 use Carbon\Carbon;
 use Image;
+use File;
 
 class FireFightingController extends Controller
 {
@@ -148,6 +149,21 @@ class FireFightingController extends Controller
     {
         if(!Auth()->check()){
             return redirect()->route('home');
+        }
+        
+        if(File::exists(public_path('files/fire_fighting/drawing/'.FireFighting::find($id)->drawing))) 
+        {
+            File::delete(public_path('files/fire_fighting/drawing/'.FireFighting::find($id)->drawing));
+        }
+        
+        if(File::exists(public_path('files/fire_fighting/prev_img/'.FireFighting::find($id)->preview_img))) 
+        {
+            File::delete(public_path('files/fire_fighting/prev_img/'.FireFighting::find($id)->preview_img));
+        }
+        
+        if(File::exists(public_path('files/fire_fighting/pdf/'.FireFighting::find($id)->pdf))) 
+        {
+            File::delete(public_path('files/fire_fighting/pdf/'.FireFighting::find($id)->pdf));
         }
         FireFighting::find($id)->delete();
         return redirect()->route('admin.fire-fighting.index');

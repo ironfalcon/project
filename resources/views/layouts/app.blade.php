@@ -18,6 +18,18 @@
     <link rel="stylesheet" href="{{ asset('files/css/icons.css') }}">
     <!--Summernote-->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+
+    
+
+<script src="{{ asset('files/js/jquery-3.3.1.min.js') }}"></script>
+<script src="https://unpkg.com/popper.js"></script>
+<script src="{{ asset('files/js/jquery.spincrement.js') }}"></script>
+<script src="{{ asset('files/js/bootstrap.js') }}"></script>
+<script src="{{ asset('files/js/jquery.animateNumber.js') }}"></script>
+<script src="{{ asset('files/js/jquery.form.js') }}"></script>
+<script src="{{ asset('files/js/ajaxMail.js') }}"></script>
+<script src="{{ asset('files/js/jquery.mixitup.js') }}"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
 </head>
 <body>
 <!--Background image-->
@@ -233,15 +245,6 @@
 @endauth
 <!-- footer end-->
 
-
-<script src="{{ asset('files/js/jquery-3.3.1.min.js') }}"></script>
-<script src="https://unpkg.com/popper.js"></script>
-<script src="{{ asset('files/js/jquery.spincrement.js') }}"></script>
-<script src="{{ asset('files/js/bootstrap.js') }}"></script>
-<script src="{{ asset('files/js/jquery.animateNumber.js') }}"></script>
-<script src="{{ asset('files/js/jquery.form.js') }}"></script>
-<script src="{{ asset('files/js/ajaxMail.js') }}"></script>
-<script src="{{ asset('files/js/jquery.mixitup.js') }}"></script>
 <script type="text/javascript">
         $(document).ready(function(){
             $('.page-scroll').click( function(){ // ловим клик по ссылке с классом go_to jquery.mixitup.min.js
@@ -306,7 +309,6 @@
     </script>
     <!-- /Mixitup : Grid -->
 <!-- Include the summernote library -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
     <script>
       $('.summernote').summernote({
         tabsize: 6,

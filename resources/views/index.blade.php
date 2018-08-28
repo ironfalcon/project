@@ -404,173 +404,57 @@
     </div>
     <!-- /Portfolio -->
 
-    <!---Gallery END->
-    <!--Clients response
-
-    <div id="clients-comment">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-md-12 text-center"><div class="title-white col-md-3"> <h3> Отзывы </h3> </div> </div>
-      </div>
-    </div>
-  </div>
-          <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div id="clients-comment-item">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-2 comment-icon">
-                        <span class="icon-comment"></span>
-                      </div>
-                      <div class="col-md-3 image-slider">
-                        <img src="img/otzv/1.png">
-                      </div>
-                      <div class="col-md-7  text-left">
-                        <div class="comment-text">
-                      Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной
-                        </div>
-                        <button type="submit" class="btn btn-box-white" style="float:right; margin-bottom: 15px;">Открыть</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div id="clients-comment-item">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-2 comment-icon">
-                        <span class="icon-comment"></span>
-                      </div>
-                      <div class="col-md-3 col-xs-12 image-slider">
-                        <img src="img/otzv/1.png">
-                      </div>
-                      <div class="col-md-7 text-left">
-                                          <div class="comment-text">
-                      Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной
-                        </div>
-                      <button type="submit" class="btn btn-box-white" style="float:right; margin-bottom: 15px;">Открыть</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div id="clients-comment-item">
-                  <div class="container">
-                    <div class="row">
-                      <div class="col-md-2 comment-icon">
-                        <span class="icon-comment"></span>
-                      </div>
-                      <div class="col-md-3 image-slider">
-                        <img src="img/otzv/1.png">
-                      </div>
-                      <div class="col-md-7  text-left">
-                        <div class="comment-text">
-                      Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной Продукция нашей компании является сертифицированной
-                        </div>
-                      <button type="submit" class="btn btn-box-inverse" style="float:right; margin-bottom: 15px;">Открыть</button>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-              <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-              <span class="carousel-control-next-icon" aria-hidden="true"></span>
-              <span class="sr-only">Next</span>
-            </a>
-          </div>
-    Clients comment END-->
+    <!---Gallery END-->
     <!--Clients-->
     <div id="clients">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12 text-center"><div class="title-blue col-md-3"> <h3> Наши заказчики</h3> </div> </div>
+                @auth
+                <div class="col-md-12 control-element text-right">
+                    <a href="#" data-toggle="modal" data-target="#editClients" class="btn btn-warning">
+                    <i class="fas fa-pen-square"></i>
+                    </a>
+                </div>
+                @endauth
             </div>
         </div>
     </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
-            <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-            <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        @for($i=0, $j=0; $i<$allClients->count(); $i+=3, $j++)
+            @if($i==0)
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$j}}" class="active"></li>
+            @else
+            <li data-target="#carouselExampleIndicators" data-slide-to="{{$j}}"></li>
+            @endif
+        @endfor
         </ol>
         <div class="carousel-inner text-center">
+            @for($i = 0; $i <$allClients->count()  ; $i+=3)
+            @if($i==0)
             <div class="carousel-item active">
-                <div id="clients-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/1.jpg">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/2.jpg">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/3.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @else
             <div class="carousel-item">
+            @endif
                 <div id="clients-item">
                     <div class="container">
                         <div class="row">
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/4.jpg">
+                            @for($j = $i; $j < $i+3 ; $j++)
+                                @if($j>=$allClients->count())
+                                    @break
+                                @endif
+                                <div class="col-md-4">
+                                    <div class="clients-image">
+                                        <img width="200px" src="{{ asset('files/img/clients/'.$allClients[$j]->img) }}">
+                                    </div>
                                 </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/5.jpg">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/6.jpg">
-                                </div>
-                            </div>
+                            @endfor
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="carousel-item">
-                <div id="clients-item">
-                    <div class="container">
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/7.jpg">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/8.jpg">
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="clients-image">
-                                    <img width="200px" src="files/img/clients/9.jpg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endfor
         </div>
     </div>
     <!--Clients END-->
@@ -598,7 +482,7 @@
         </div>
     </div>
     
-    {{--Изменение описания о Компании--}}
+    {{--Изменение описания о продукции--}}
     <div class="modal fade" id="changeAboutProduction" role="dialog">
         <div class="modal-dialog modal-md">
             <div class="modal-content">
@@ -619,6 +503,76 @@
                     {!! Form::close() !!}
                 </div>
 
+            </div>
+        </div>
+    </div>
+        
+    {{--Изменение заказчиков--}}
+    <div class="modal fade" id="editClients" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Наши заказчики</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-left">
+                    <div class="form-group">
+                        <div class="row pb-3">
+                        <div class="col-md-12 text-right">
+                            <a href="#" data-toggle="modal" data-target="#addClients" class="btn btn-warning">Добавить</a>
+                        </div>
+                    </div>
+                        <div class="container">
+                            <div class="row">
+                            @foreach($allClients as $Client)
+                                <div class="col-md-4 col-xs-12 text-center" style="padding:2px;">
+                                    <div style="border: solid 1px rgb(50, 167, 237);">
+                                    <img src="{{asset('files/img/clients/'.$Client->img)}}" height="200px" >
+                                    </div>
+                            <div class="col-md-12 admin-icons-prod text-right">
+                                <!-- форма удаления -->
+                                {!! Form::open(['method' => 'DELETE', 'route' => ['clients.delete', $Client->id] ])!!}
+                                {{ csrf_field() }}
+                                <button alt="Удалить" style="margin-top:5px;" class="btn btn-danger" onclick="return confirm('Вы уверены?')">
+                                <i class="fas fa-trash"></i>
+                                </button>
+                                {!! Form::close() !!}
+                            </div>
+                                </div>
+                            @endforeach
+                            </div>
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="addClients" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Наши заказчики</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-left">
+                <form enctype="multipart/form-data" action="{{ route('clients.add') }}" method="POST">
+                    {{ csrf_field() }}
+                        <div class="form-group">
+                            <label>Наши заказчики:</label>
+                            <div class="container">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <input id="img" name="img" type="file" class="btn btn-warning">
+                                    </div>           
+                                </div>
+                            </div>
+                            <br>
+                            <button class="btn btn-success">Добавить</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>

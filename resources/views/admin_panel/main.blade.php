@@ -2,5 +2,6 @@
 
 @section('content')
 
+<a href="{{route('admin.partners.index')}}" class="btn">Btn</a>
 
 @endsection('content')

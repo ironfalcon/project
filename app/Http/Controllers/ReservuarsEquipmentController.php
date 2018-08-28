@@ -6,6 +6,7 @@ use App\ReservuarsEquipment;
 use Illuminate\Http\Request;
 use Carbon\Carbon;
 use Image;
+use File;
 //Резервуарное оборудование
 class ReservuarsEquipmentController extends Controller
 {
@@ -147,6 +148,20 @@ class ReservuarsEquipmentController extends Controller
     {
         if(!Auth()->check()){
             return redirect()->route('home');
+        }
+        if(File::exists(public_path('files/reservuars_equipment_img/drawing/'.ReservuarsEquipment::find($id)->drawing))) 
+        {
+            File::delete(public_path('files/reservuars_equipment_img/drawing/'.ReservuarsEquipment::find($id)->drawing));
+        }
+        
+        if(File::exists(public_path('files/reservuars_equipment_img/prev_img/'.ReservuarsEquipment::find($id)->preview_img))) 
+        {
+            File::delete(public_path('files/reservuars_equipment_img/prev_img/'.ReservuarsEquipment::find($id)->preview_img));
+        }
+        
+        if(File::exists(public_path('files/reservuars_equipment_img/pdf/'.ReservuarsEquipment::find($id)->pdf))) 
+        {
+            File::delete(public_path('files/reservuars_equipment_img/pdf/'.ReservuarsEquipment::find($id)->pdf));
         }
         ReservuarsEquipment::find($id)->delete();
         return redirect()->route('admin.reservuars-equipment.index');

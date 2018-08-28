@@ -28,7 +28,6 @@
           <span style="color:rgb(50, 167, 237);">/</span>  
           <!--наименование продукции-->
           {{$production->title}} 
-
         </div>
       </div>
     </div>

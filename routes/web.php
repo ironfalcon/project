@@ -49,12 +49,20 @@ Route::get('productions/reservuars-metal-construction/horizontal', function () {
 
 
 Auth::routes();
-
+//Клиенты
+Route::post('/clients/add', 'ClientsController@store')->name('clients.add');
+Route::delete('/clients/delete/{id}', 'ClientsController@delete')->name('clients.delete');
 //Главная
 Route::get('/', 'HomeController@index')->name('home');
 
 Route::put('/update', 'HomeController@update')->name('home.update');
-
+//Партнеры
+Route::get('admin_panel/partners/index', 'PartnersController@index')
+->name('admin.partners.index');
+Route::post('admin_panel/partners/add', 'PartnersController@store')
+->name('admin.partners.add');
+Route::delete('admin_panel/partners/delete/{id}', 'PartnersController@delete')
+->name('admin.partners.delete');
 //Пожаротушение
 Route::get('productions/fire-fighting/index', 'FireFightingController@index')->name('fire-fighting.index');
 Route::get('productions/fire-fighting/{id}', 'FireFightingController@show')->name('fire-fighting.show');

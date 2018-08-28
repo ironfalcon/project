@@ -33,7 +33,9 @@
                 <div class="news-pre">
                     <h1 class="col-md-12">{{$news->title}}</h1>
                     <div class="col-md-12 news-description">
-                        <a href="#"><img src="{{ asset('files/news_image/'.$news->img) }}" width="300px" class="news-img rounded float-left"></a>
+                        <a  data-toggle="modal" href="" data-target="#img-modal">
+                        <img src="{{ asset('files/news_image/'.$news->img) }}" width="300px" class="news-img rounded float-left">
+                        </a>
                         {!!$news->text!!}
                         </div>
                     <div class="col-md-12">
@@ -44,7 +46,20 @@
             </div>
         </div>
     </div>
-
+                    <!-- Load Photo in Modal -->
+                    <div class="modal fade" id="img-modal" tabindex="-1" role="dialog"  aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h4 class="modal-title text-center">Резервуары</h4>
+                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                                </div>
+                                <div class="modal-body">
+                                    <img class="img-thumbnail" alt="Rezervuars1" src="{{ asset('files/news_image/'.$news->img) }}"/>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
 @endsection('content')
 {{--<img src="/uploads/news_photo/{{ $new->photo }}">--}}
 {{--{{ asset('files/img/fav.ico') }}--}}
