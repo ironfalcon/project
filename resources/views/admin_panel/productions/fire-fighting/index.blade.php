@@ -6,8 +6,12 @@
 
         <!-- Кнопка добавить новое оборудование-->
         <!--<a href="{{ route('admin.fire-fighting.create') }}"><button class="btn btn-success">Создать</button></a>-->
-        <div id="produtions-MC-blocks">
+        <div id="produtions-MC-blocks" style="background-color:#fff;">
             <div class="container-fluid">
+            
+            <div class="row">
+                <div class="col-md-12 text-center title-footer"><h4> Подслойное пожаротушение </h4></div>
+            </div>
                 <div class="row">
                     <!-- Кнопка добавить продукцию-->
                         <div class = "col-md-3 block-el">

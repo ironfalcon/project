@@ -7,6 +7,7 @@ use App\MetalConstruction;
 use App\Partners;
 use Carbon\Carbon;
 use App\Docs;
+use App\TextDescription;
 use Image;
 use File;
 
@@ -19,7 +20,10 @@ class MetalConstructionController extends Controller
         $allMetalConstruction = MetalConstruction::all();
         $allPartners = Partners::all();
         $allDocs = Docs::all();
-        return view('productions.metal-construction-buldings.index',['allMetalConstruction' =>$allMetalConstruction,'allPartners' =>$allPartners,'allDocs' =>$allDocs,]);
+        $MainText = TextDescription::where('type','production')->first();
+        $ConcreteText = TextDescription::where('type','metal-construction-buldings')->first();
+        return view('productions.metal-construction-buldings.index',['allMetalConstruction' =>$allMetalConstruction,'allPartners' =>$allPartners,'allDocs' =>$allDocs,
+        'MainText'=>$MainText,'ConcreteText'=>$ConcreteText]);
     }
 
     public function show($id)

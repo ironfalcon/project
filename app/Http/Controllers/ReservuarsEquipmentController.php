@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Carbon\Carbon;
 use App\Partners;
 use App\Docs;
+use App\TextDescription;
 use Image;
 use File;
 //Резервуарное оборудование
@@ -18,7 +19,10 @@ class ReservuarsEquipmentController extends Controller
         $allReservuarsEquipment = ReservuarsEquipment::all();
         $allPartners = Partners::all();
         $allDocs = Docs::all();
-        return view('productions.reservuars-equipment.index',['allReservuarsEquipment' =>$allReservuarsEquipment,'allPartners' =>$allPartners,'allDocs' =>$allDocs,]);
+        $MainText = TextDescription::where('type','production')->first();
+        $ConcreteText = TextDescription::where('type','reservuars-equipment')->first();
+        return view('productions.reservuars-equipment.index',['allReservuarsEquipment' =>$allReservuarsEquipment,'allPartners' =>$allPartners,'allDocs' =>$allDocs,
+        'MainText'=>$MainText,'ConcreteText'=>$ConcreteText]);
     }
 
     public function show($id)

@@ -59,7 +59,7 @@
             <ul class="navbar-nav ml-auto">
                 @auth
                     <li class="nav-item">
-                        <a class="nav-link page-scroll" href="{{ route('admin.main') }}">Админка</a>
+                        <a class="nav-link page-scroll" href="{{ route('admin.main') }}">Управление</a>
                     </li>
                 @endauth
                 <li class="nav-item">
@@ -67,9 +67,6 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home') }}#projects">Проекты</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link page-scroll" href="{{ route('home') }}#all-services">Услуги</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('home') }}#produtions">Продукция</a>

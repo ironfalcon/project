@@ -5,8 +5,8 @@
 <div class="admin-container">
     <div class="container">
         <div class="row">
-        <div class="col-md-12">
-            <h3>Создание нового резервуарного оборудования</h3>
+        <div class="col-md-12 pt-3">
+            <h3>Создание продукции - "Подслойное пожаротушение"</h3>
         </div>
         <div class="col-md-12">
             <form enctype="multipart/form-data" action="{{ route('admin.fire-fighting.store') }}" method="POST">

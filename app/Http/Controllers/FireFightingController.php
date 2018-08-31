@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\FireFighting;
 use App\Partners;
 use App\Docs;
+use App\TextDescription;
 use Carbon\Carbon;
 use Image;
 use File;
@@ -19,7 +20,10 @@ class FireFightingController extends Controller
         $allFireFighting = FireFighting::all();
         $allPartners = Partners::all();
         $allDocs = Docs::all();
-        return view('productions.fire-fighting.index',['allFireFighting' =>$allFireFighting,'allPartners' =>$allPartners,'allDocs' =>$allDocs,]);
+        $MainText = TextDescription::where('type','production')->first();
+        $ConcreteText = TextDescription::where('type','fire-fighting')->first();
+        return view('productions.fire-fighting.index',['allFireFighting' =>$allFireFighting,'allPartners' =>$allPartners,'allDocs' =>$allDocs,
+        'MainText'=>$MainText,'ConcreteText'=>$ConcreteText]);
     }
 
     public function show($id)

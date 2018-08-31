@@ -5,10 +5,13 @@
     <div class="container" style="padding-top:20px;">
 
         <!-- Отображение типов продукции для админки-->
-        <div id="produtions">
+        <div id="produtions" style="background-color:#fff;">
             <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center title-footer"><h4> Продукция </h4></div>
+            </div>
                 <div class="row">
-
+                
                     <div class="col-md-3 productions-element">
                         <a href="{{ route('admin.reservuars-equipment.index') }}">
               <span class="icons">

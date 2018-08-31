@@ -3,7 +3,7 @@
     <!--Header END-->
     <!--produtions-->
     <div id="produtions">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 @auth
                 <div class="col-md-12 control-element text-right">
@@ -12,10 +12,13 @@
                     </a>
                 </div>
                 @endauth
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
                 <div class="col-md-12"><div class="col-md-3 title-blue"> <h3> Продукция </h3> </div> </div>
                 <div class="col-md-12 text-center">
-                Вся продукция, производимая и поставляемая нашим объединением, сертифицирована на соответствие требованиям действующих национальных стандартов и технических условий, и имеет полный пакет разрешительных документов.
-                {{ $mainpage->AboutProduction }}
+                {!! $mainpage->AboutProduction !!}
                 </div>
                 <div class="row">
                     <div class="col-md-3 productions-element">
@@ -57,18 +60,21 @@
     <!--produtions END-->
     <!--about-->
     <div id="about">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
-                @auth
+            @auth
                 <div class="col-md-12 control-element text-right">
                     <a href="#" data-toggle="modal" data-target="#changeAboutCompany" class="btn btn-warning">
                     <i class="fas fa-pen-square"></i>
                     </a>
                 </div>
                 @endauth
+            </div>
+        </div>
+        <div class="container">
+            <div class="row">
                 <div class="col-md-12 text-center"><div class="title-white col-md-3"> <h3> О компании </h3> </div> </div>
                 <div class="col-md-6">
-                    Группа компаний "Технолог" оказывает полный спектр услуг по оснащению и строительству нефтяных, газовых и химических предприятий. Наша репутация лидера рынка основана на многолетнем опыте, собственном производстве и активном внедрении современных технологий в работе.
                     {{ $mainpage->AboutCompany }}
                 </div>
                 <div class="col-md-6">
@@ -85,22 +91,6 @@
                         </div>
                     </div>
                 </div>
-                <!--<div class="col-md-12 text-center numbers">
-                  <div class="row">
-                    <div class="col-md-4">
-                      <span id="fun-level-1"> 0 </span>
-                      <p> Подпись</p>
-                    </div>
-                    <div class="col-md-4">
-                      <span id="fun-level-2"> 0 </span>
-                      <p> Подпись</p>
-                    </div>
-                    <div class="col-md-4">
-                      <span id="fun-level-3">  0 </span>
-                      <p> Подпись</p>
-                    </div>
-                  </div>
-                </div>-->
             </div>
         </div>
     </div>
@@ -137,6 +127,20 @@
             </div>
         </div>
     </div>
+    <div id="geo">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="col-md-3 title-blue text-center">
+                    <h3>География работы</h3>
+                    </div>
+                </div>
+                <div class="col-md-12 text-center p-10">
+                    <img width="100%" src="files/img/geo.jpg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
     <!--services END-->
     <!---Gallery-->
 
@@ -146,7 +150,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <div class="col-md-3 title-white">
+                    <div class="col-md-12"><div class="col-md-3 title-white">
                         <h3> Проекты </h3>
                     </div>
                 </div>
@@ -494,7 +498,7 @@
                     {!! Form::open(['route' => ['home.update'], 'method' => 'PUT']) !!}
                     <div class="form-group">
                         <label>О продукции:</label>
-                        <textarea name="AboutProduction" id="AboutProduction" rows="5" class="summernote form-control">
+                        <textarea name="AboutProduction" id="AboutProduction" rows="5" class="summernote">
                         {{  $mainpage->AboutProduction }}
                         </textarea>
                         <br>

@@ -30,12 +30,15 @@
   <div id="produtions-metal-construction">
     <div class="container">
     	<div class="row">
-        <div class="col-md-12 text-left"><span class="text-title">Объединенная группа компаний «Технолог»</span>  поставляет 
-металлоконструкции различного назначения, применяемые в строительной, 
-нефтехимической, металлургической, машиностроительной, угольной отраслях 
-промышленности и коммунальном хозяйстве. Производство осуществляется на 
-саратовском заводе резервуарных металлоконструкций. Линейка продукции постоянно 
-расширяется и не ограничивается резервуарными металлоконструкциями.
+        @auth
+        <div class="col-md-12 control-element text-right">
+            <a href="#" data-toggle="modal" data-target="#changeConcreteText" class="btn btn-warning">
+            <i class="fas fa-pen-square"></i>
+            </a>
+        </div>
+        @endauth
+        <div class="col-md-12 text-left">
+        {!!$ConcreteText->text!!}
           </div>
       </div>
     </div>
@@ -80,10 +83,15 @@
   <div id="about-second">
     <div class="container">
       <div class="row">
+        @auth
+        <div class="col-md-12 control-element text-right">
+            <a href="#" data-toggle="modal" data-target="#changeMainText" class="btn btn-warning">
+            <i class="fas fa-pen-square"></i>
+            </a>
+        </div>
+        @endauth
         <div class="col-md-12"> 
-<p>В объединение производственных предприятий «Технолог» входят следующие компании: НПООО «Технолог-Гидромаш». Основано в 1996 году. Области деятельности – осуществление комплексных поставок металлоконструкций резервуаров, навесного резервуарного оборудования, противопожарного оборудования и пенообразователя предприятиям нефтегазового и нефтехимического комплекса. Также предприятие осуществляет монтаж резервуаров «под ключ».</p>
-
-<p>АО «АП «РМК». Основано в 1947 году. Области деятельности – изготовление резервуаров и прочих металлоконструкций, разработка проектов КМ и КМД, выполнение проектных работ любой сложности. ООО «ТД «РЗМК». Основано в 2015 году. Область деятельности – поставка металлоконструкций резервуаров для нужд предприятий системы «Транснефть».</p>
+        {!!$MainText->text!!}
         </div>
       </div>
     </div>
@@ -216,5 +224,60 @@
           </div><!-- /.modal -->  
 @endforeach
   <!--Docs Modal END-->
+
+    
+    @auth
+    {{--Изменение описания о продукции--}}
+    <div class="modal fade" id="changeConcreteText" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">О продукции</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-left">
+                  <form enctype="multipart/form-data" action="{{ route('text.update',$ConcreteText->id) }}" method="POST">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label>О продукции:</label>
+                        <textarea name="text" id="ConcreteText" rows="5" class="summernote form-control">
+                        {{  $ConcreteText->text }}
+                        </textarea>
+                        <br>
+                        <button class="btn btn-success">Изменить</button>
+                    </div>
+                  </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    {{--Изменение текста о компании в продукции--}}
+    <div class="modal fade" id="changeMainText" role="dialog">
+        <div class="modal-dialog modal-md">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">О продукции</h4>
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                </div>
+                <div class="modal-body text-left">
+                  <form enctype="multipart/form-data" action="{{ route('text.update',$MainText->id) }}" method="POST">
+                    {{ csrf_field() }}
+                    <div class="form-group">
+                        <label>О продукции:</label>
+                        <textarea name="text" id="MainText" rows="5" class="summernote form-control">
+                        {{  $MainText->text }}
+                        </textarea>
+                        <br>
+                        <button class="btn btn-success">Изменить</button>
+                    </div>
+                  </form>
+                </div>
+
+            </div>
+        </div>
+    </div>
+@endauth
 
 @endsection('content')

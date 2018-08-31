@@ -58,7 +58,9 @@
     <div class="container">
       <div class="row">
         <!-- Чертеж изображение -->
-        <img height="400px" src="{{asset('files/metal_construction/drawing/'.$production->drawing) }}">
+        <div class="col-md-12 text-center">
+           <img height="300px"  src="{{asset('files/metal_construction/drawing/'.$production->drawing) }}">
+        </div>
       </div>
     </div>
   </div>

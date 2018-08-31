@@ -142,6 +142,15 @@ transform: translateX(-50%);
   background-color: rgb(50, 167, 237);
   padding: 15px;
 }
+#geo
+{
+  background-color: rgb(255, 255, 255);
+  padding-bottom: 20px;
+}
+.note-editor .note-editing-area {
+  position: relative;
+  top: 40px;
+}
 /*********************************Docs END************************************/
 /**********************************Partner**************************************/
 #partners
@@ -1066,5 +1075,9 @@ color:#000;
 .control-element a
 {
  color:#fff;
+}
+.main-admin
+{
+  color:#404040!important;
 }
 /*Admin panel end*/

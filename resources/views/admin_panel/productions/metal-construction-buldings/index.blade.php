@@ -6,10 +6,13 @@
 
         <!-- Кнопка добавить новое оборудование-->
         <!--<a href="{{ route('admin.metal-construction-buldings.create') }}"><button class="btn btn-success">Создать</button></a>-->
-        <div id="produtions-MC-blocks">
+        <div id="produtions-MC-blocks" style="background-color:#fff;">
             <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center title-footer"><h4> Металлоконструкции зданий </h4></div>
+            </div>
                 <div class="row">
-                    <!-- Кнопка добавить продукцию-->
+            <!-- Кнопка добавить продукцию-->
                         <div class = "col-md-3 block-el">
                             <!--Проверять если нету превью имейдж то подставлять чертеж (из папки drawing)-->
                             <img class="block-image" src=" {{asset('files/img/plus.jpg') }} ">

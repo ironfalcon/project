@@ -53,8 +53,10 @@ Route::post('/clients/add', 'ClientsController@store')->name('clients.add');
 Route::delete('/clients/delete/{id}', 'ClientsController@delete')->name('clients.delete');
 //Главная
 Route::get('/', 'HomeController@index')->name('home');
-
 Route::put('/update', 'HomeController@update')->name('home.update');
+//Тексты
+Route::post('text/update/{id}', 'TextDescriptionController@update')->name('text.update');
+
 //Партнеры
 Route::get('admin_panel/partners/index', 'PartnersController@index')
 ->name('admin.partners.index');

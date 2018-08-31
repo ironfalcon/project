@@ -61,7 +61,7 @@
       <div class="row">
         <!-- Чертеж изображение --> 
         <div class="col-md-12 text-center">
-           <img height="400px" src="{{asset('files/reservuars_equipment_img/drawing/'.$production->drawing) }}">
+           <img height="300px" src="{{asset('files/reservuars_equipment_img/drawing/'.$production->drawing) }}">
         </div>   
       </div>
     </div>

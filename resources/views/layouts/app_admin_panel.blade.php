@@ -46,9 +46,6 @@
                     <a class="nav-link page-scroll" href="{{ route('admin.main') }}">Главная</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link page-scroll" href="#all-services">Контакты</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link page-scroll" href="{{ route('admin.production') }}">Продукция</a>
                 </li>
                 <li class="nav-item">

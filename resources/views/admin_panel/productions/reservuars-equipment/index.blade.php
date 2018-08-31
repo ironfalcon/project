@@ -6,8 +6,11 @@
 
         <!-- Кнопка добавить новое оборудование-->
         <!--<a href="{{ route('admin.reservuars-equipment.create') }}"><button class="btn btn-success">Создать</button></a>-->
-        <div id="produtions-MC-blocks">
+        <div id="produtions-MC-blocks" style="background-color:#fff;">
             <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12 text-center title-footer"><h4> Резервуарное оборудование </h4></div>
+            </div>
                 <div class="row">
                     <!-- Кнопка добавить продукцию-->
                         <div class = "col-md-3 block-el">
