@@ -65,7 +65,7 @@ class NewsController extends Controller
         $news->title = $request->title;
         $news->description = $request->description;
         $news->text = $request->text;
-        $news->created_at = Carbon::now('Europe/Samara');
+        $news->created_at = $request->date;
         $news->updated_at = Carbon::now('Europe/Samara');
         $news->save();
 

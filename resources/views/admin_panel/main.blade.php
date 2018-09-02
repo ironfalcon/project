@@ -22,7 +22,7 @@
                 <div class="card-body">
                     <h5 class="card-title">Почта для обратной связи</h5>
                     <p class="card-text">В данном блоке можно будет изменить почту, на которую будут приходить сообщения из блока - "Обратная связь"</p>
-                    <p><a href="#" class="btn btn-warning">Изменить</a>
+                    <p><a href="{{route('admin.feedback.index')}}" class="btn btn-warning">Изменить</a>
                 </div>
             </div>
         </div>

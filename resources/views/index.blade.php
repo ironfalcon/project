@@ -79,15 +79,15 @@
                 </div>
                 <div class="col-md-6">
                     <div class="row">
-                        <div class="col-md-6">
-                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Собственное производство</p>
-                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Профессиональный инжинеринг</p>
-                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Гарантия качества</p>
+                        <div class="col-md-6 col-xs-12 row">
+                            <p class="advantages col-md-12"><i class="check far fa-2x fa-check-square"></i> Собственное производство</p>
+                            <p class="advantages col-md-12"><i class="check far fa-2x fa-check-square"></i> Профессиональный инжинеринг</p>
+                            <p class="advantages col-md-12"><i class="check far fa-2x fa-check-square"></i> Гарантия качества</p>
                         </div>
-                        <div class="col-md-6">
-                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Сертифицированная продукция</p>
-                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Сопровождение документации</p>
-                            <p class="advantages"><i class="check far fa-3x fa-check-square"></i> Зарубежный опыт</p>
+                        <div class="col-md-6 col-xs-12 row">
+                            <p class="advantages col-md-12"><i class="check far fa-2x fa-check-square"></i> Сертифицированная продукция</p>
+                            <p class="advantages col-md-12"><i class="check far fa-2x fa-check-square"></i> Сопровождение документации</p>
+                            <p class="advantages col-md-12"><i class="check far fa-2x fa-check-square"></i> Зарубежный опыт</p>
                         </div>
                     </div>
                 </div>
@@ -128,7 +128,7 @@
         </div>
     </div>
     <div id="geo">
-        <div class="container">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
                     <div class="col-md-3 title-blue text-center">

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\MainPage;
 use App\Clients;
+use App\FeedBackMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use Image;
@@ -65,7 +66,7 @@ class HomeController extends Controller
         // здесь указываем почту на которое будут приходить письма
         // по хорошему нужно добавить в базу или в какой нибудь файлик конфигурации
         // что бы была возможность менять почту из админки
-        $admin_mail = 'ironfalcon@yandex.ru';
+        $mails = FeedBackMail::all();
         $name = $request->name;
         $user_mail = $request->email;
         $phone = $request->subject;
@@ -74,12 +75,16 @@ class HomeController extends Controller
         // 1) адрес вьюшки она в корне, поэтому просто mail
         // 2) массив с данными которые посылаем во вьюшку
         // 3) получатель письма
-        Mail::send('mail', $data, function($message) use($admin_mail) {
-            $message->to($admin_mail, 'Что то еще')->subject
-            ('Обратная связь от пользователя');
-             //почта с которой отправленно          //От кого пришло
-            $message->from(env('MAIL_USERNAME'),'Обратная связь с сайта');
-        });
+        foreach($mails as $mail)
+        {
+            $admin_mail = $mail->mail;
+            Mail::send('mail', $data, function($message) use($admin_mail) {
+                $message->to($admin_mail, 'Что то еще')->subject
+                ('Обратная связь от пользователя');
+                 //почта с которой отправленно          //От кого пришло
+                $message->from(env('MAIL_USERNAME'),'Обратная связь с сайта');
+            });
+        }
 
         return redirect()->route('home');
 

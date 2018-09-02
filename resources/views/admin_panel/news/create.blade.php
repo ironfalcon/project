@@ -23,6 +23,9 @@
                     <label for="text">Текст новости:</label>
                     <textarea required name="text" id="text"  rows="5" class="summernote form-control input-text">{{old('text')}}</textarea>
                     <br>
+                    <label for="text">Дата:</label>
+                    <input required name="date" id="date" class="form-control input-text" value="{{date('Y-m-d H:i:s')}}">
+                    <br>
                     <label for="img">Картинка:</label>
                     <input type="file" class="btn btn-warning" id="img" name="photo" value="{{ old('photo')}}">
                     <br>

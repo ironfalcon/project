@@ -144,12 +144,17 @@ transform: translateX(-50%);
 }
 #geo
 {
-  background-color: rgb(255, 255, 255);
+  background-color: #f1f1f1;
   padding-bottom: 20px;
 }
-.note-editor .note-editing-area {
-  position: relative;
-  top: 40px;
+/*For SummerNote on Modal*/
+.modal .note-editor.note-frame .note-editing-area .note-editable {
+  padding: 10px;
+  padding-top: 40px!important;
+  overflow: auto;
+  color: #000;
+  word-wrap: break-word;
+  background-color: #fff;
 }
 /*********************************Docs END************************************/
 /**********************************Partner**************************************/

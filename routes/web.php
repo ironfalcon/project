@@ -56,6 +56,13 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::put('/update', 'HomeController@update')->name('home.update');
 //Тексты
 Route::post('text/update/{id}', 'TextDescriptionController@update')->name('text.update');
+//Почты для обратной связи
+Route::get('admin_panel/feedback/index', 'FeedBackMailController@index')
+->name('admin.feedback.index');
+Route::post('admin_panel/feedback/add', 'FeedBackMailController@store')
+->name('admin.feedback.add');
+Route::delete('admin_panel/feedback/delete/{id}', 'FeedBackMailController@delete')
+->name('admin.feedback.delete');
 
 //Партнеры
 Route::get('admin_panel/partners/index', 'PartnersController@index')
